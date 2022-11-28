@@ -11,8 +11,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 export const LanguageSection: FC<IProps> = ({ className, languageList }) => {
   return (
     <section className={cns(className)}>
-      <h2 className="fs-24">
-        <span id="language" />
+      <h2 className="fs-24" id="language">
         <a className="align-items-center" href="#language">
           {t.section.languages.title}
           <GlobeIcon className="ml-10 c-primary" />

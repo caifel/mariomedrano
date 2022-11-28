@@ -1,0 +1,56 @@
+$sizeArray: (12, 14, 16, 24, 32, 40);
+$weightArray: (100, 400, 700);
+$distanceArray: (0, 1, 5, 10, 20, 30, 40);
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+.justify-content-between {
+  display: flex;
+  justify-content: space-between;
+}
+.d-block {
+  display: block;
+}
+
+.text-mix {
+  > *:not(:first-child) {
+    margin-left: 5px;
+  }
+}
+
+@include iterate-props-map(
+  'c',
+  'color',
+  (
+    'link': var(--color-link),
+    'primary': var(--color-primary)
+  )
+);
+@include iterate-props-map(
+  'bg',
+  'background-color',
+  (
+    'section': var(--bg-section)
+  )
+);
+@include iterate-props-arr('fs', ('font-size'), $sizeArray, 'px');
+@include iterate-props-arr('fw', ('font-weight'), $weightArray);
+@include iterate-props-arr('lh', ('line-height'), (1, 2));
+@include iterate-props-arr('mt', ('margin-top'), $distanceArray, 'px');
+@include iterate-props-arr('ml', ('margin-left'), $distanceArray, 'px');
+@include iterate-props-arr('mr', ('margin-right'), $distanceArray, 'px');
+@include iterate-props-arr('p', ('padding'), $distanceArray, 'px');
+@include iterate-props-arr('pl', ('padding-left'), $distanceArray, 'px');
+@include iterate-props-arr('pr', ('padding-right'), $distanceArray, 'px');
+@include iterate-props-arr('px', ('padding-left', 'padding-right'), $distanceArray, 'px');
+@include iterate-props-arr('py', ('padding-top', 'padding-bottom'), $distanceArray, 'px');
+
+@media (min-width: 641px) {
+  @include iterate-props-arr('fs-md', ('font-size'), $sizeArray, 'px');
+  @include iterate-props-arr('fw-md', ('font-weight'), $weightArray);
+  @include iterate-props-arr('mt-md', ('margin-top'), $distanceArray, 'px');
+  @include iterate-props-arr('ml-md', ('margin-left'), $distanceArray, 'px');
+  @include iterate-props-arr('p-md', ('padding'), $distanceArray, 'px');
+}

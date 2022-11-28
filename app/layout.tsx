@@ -12,7 +12,7 @@ const roboto = Roboto({
 
 const Header: FC = () => {
   return (
-    <header className="bg-section p-20">
+    <header className="bg-section px-20 py-20">
       <h1 className="c-primary fs-32 fs-md-40 fw-400">{personalInfo.name}</h1>
       <div className="mt-10 mt-md-0">
         <p className="fs-16 fs-md-24">{personalInfo.role}</p>
@@ -33,7 +33,7 @@ const Header: FC = () => {
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-section p-20 mt-1 mt-md-0">
+    <footer className="bg-section px-20 py-40 mt-1 mt-md-0">
       <p>
         <span>{t.footer.part1}</span>
       </p>

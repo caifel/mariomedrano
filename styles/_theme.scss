@@ -8,7 +8,9 @@
   --color-light-purple: #a8a8ff;
   --color-light-blue: #55acee;
   --color-green: #629924;
+  --color-green-50: #6299247d;
   --color-red: #d75454;
+  --color-red-50: #d754547d;
 }
 
 html[data-theme='light'] {
@@ -18,6 +20,7 @@ html[data-theme='light'] {
   --color-muted: var(--color-gray);
   --bg-section: var(--color-white);
   --bg-body: var(--color-light);
+  --border-color: var(--color-red-50);
 }
 
 html[data-theme='dark'] {
@@ -27,4 +30,5 @@ html[data-theme='dark'] {
   --color-muted: var(--color-gray);
   --bg-section: var(--color-black);
   --bg-body: var(--color-dark);
+  --border-color: var(--color-green-50);
 }

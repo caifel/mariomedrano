@@ -1,7 +1,8 @@
-import { education, languages, workingExperience } from './data';
+import { education, hobbies, languages, workingExperience } from './data';
 import { t } from './locales/en/all';
 import { EducationSection } from './sections/EducationSection';
 import { ExperienceSection } from './sections/ExperienceSection';
+import { HobbySection } from './sections/HobbySection';
 import { LanguageSection } from './sections/LanguageSection';
 
 const Page = () => {
@@ -22,12 +23,10 @@ const Page = () => {
         </p>
       </div>
 
-      <ExperienceSection className="mt-1 mt-md-0 px-20 py-40 bg-section" workingExperience={workingExperience} />
-      <EducationSection className="mt-1 mt-md-0 px-20 py-40 bg-section" educationList={education} />
-      <LanguageSection className="mt-1 mt-md-0 px-20 py-40 bg-section" languageList={languages} />
-      <section className="mt-1 mt-md-0 px-20 py-40 bg-section">
-        <h2 className="fs-24">{t.section.hobbies.title}</h2>
-      </section>
+      <ExperienceSection className="bg-section px-20 py-40 mt-1 mt-md-0" workingExperience={workingExperience} />
+      <EducationSection className="bg-section px-20 py-40 mt-1 mt-md-0" educationList={education} />
+      <LanguageSection className="bg-section px-20 py-40 mt-1 mt-md-0" languageList={languages} />
+      <HobbySection className="bg-section px-20 py-40 mt-1 mt-md-0" hobbies={hobbies} />
     </>
   );
 };

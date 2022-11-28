@@ -64,3 +64,4 @@ export const languages: TLanguage[] = [
     details: 'TOEFL IBT score 94 in 2019'
   }
 ];
+export const hobbies: string[] = ['Chess', 'Phylosophy', 'Music', 'Traveling', 'Sports', 'Technology'];
