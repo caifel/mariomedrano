@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import cns from 'classnames';
-import { ExperienceItem } from './ExperienceItem';
 import { t } from '../../locales/en/all';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -17,11 +16,7 @@ export const HobbySection: FC<IProps> = ({ workingExperience, className }) => {
         </a>
       </h2>
 
-      <div className="mt-30">
-        {workingExperience.map((experience) => (
-          <ExperienceItem key={experience.company} data={experience} />
-        ))}
-      </div>
+      <div className="mt-30"></div>
     </section>
   );
 };
