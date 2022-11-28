@@ -18,12 +18,7 @@ $weightArray: (100, 400, 700);
 );
 @include iterate-props-arr('fs', ('font-size'), $sizeArray, 'px');
 @include iterate-props-arr('fw', ('font-weight'), $weightArray);
-.lh-1 {
-  line-height: 1;
-}
-.lh-1-5 {
-  line-height: 1.5;
-}
+@include iterate-props-arr('lh', ('line-height'), (1, 2));
 
 @media (min-width: 641px) {
   @include iterate-props-arr('fs-md', ('font-size'), $sizeArray, 'px');
