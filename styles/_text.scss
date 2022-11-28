@@ -1,0 +1,31 @@
+$sizeArray: (12, 14, 16, 24, 32, 40);
+$weightArray: (100, 400, 700);
+
+@include iterate-props-map(
+  'c',
+  'color',
+  (
+    'link': var(--color-link),
+    'primary': var(--color-primary)
+  )
+);
+@include iterate-props-map(
+  'bg',
+  'background-color',
+  (
+    'section': var(--bg-section)
+  )
+);
+@include iterate-props-arr('fs', ('font-size'), $sizeArray, 'px');
+@include iterate-props-arr('fw', ('font-weight'), $weightArray);
+.lh-1 {
+  line-height: 1;
+}
+.lh-1-5 {
+  line-height: 1.5;
+}
+
+@media (min-width: 641px) {
+  @include iterate-props-arr('fs-md', ('font-size'), $sizeArray, 'px');
+  @include iterate-props-arr('fw-md', ('font-weight'), $weightArray);
+}

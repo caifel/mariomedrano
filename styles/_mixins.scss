@@ -1,0 +1,17 @@
+@mixin iterate-props-arr($name, $attrs, $array, $unit: '') {
+  @each $value in $array {
+    .#{$name}-#{$value} {
+      @each $attr in $attrs {
+        #{$attr}: #{$value}#{$unit};
+      }
+    }
+  }
+}
+
+@mixin iterate-props-map($name, $attr, $map, $unit: '') {
+  @each $key, $value in $map {
+    .#{$name}-#{$key} {
+      #{$attr}: #{$value}#{$unit};
+    }
+  }
+}

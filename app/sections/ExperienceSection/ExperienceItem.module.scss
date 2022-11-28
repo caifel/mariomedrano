@@ -1,0 +1,13 @@
+.root {
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+  display: flex;
+  align-items: baseline;
+  .year {
+    flex: 1;
+  }
+  .content {
+    flex: 3;
+  }
+}
