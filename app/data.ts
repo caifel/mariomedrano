@@ -8,9 +8,8 @@ export const personalInfo = {
   name: 'Mario Medrano',
   description:
     'I’m a 30 year old engineer whose main passion is to acquire real knowledge to the point where initiative, creativity and intuition flow.',
-  role: 'MERN Stack | React Developer',
+  role: 'React / Next.js / MERN Stack',
   email: 'mario.medrano.maldonado@gmail.com'
-  // phone: '+49 1635455919'
 };
 
 export const workingExperience: TWorkingExperience[] = [

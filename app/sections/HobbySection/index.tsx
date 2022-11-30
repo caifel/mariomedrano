@@ -17,7 +17,7 @@ export const HobbySection: FC<IProps> = ({ hobbies, className }) => {
 
       <div className="mt-10">
         {hobbies.map((hobby) => (
-          <span className="badge mr-20 mt-20" key={hobby}>
+          <span className="badge-primary mr-20 mt-20" key={hobby}>
             {hobby}
           </span>
         ))}

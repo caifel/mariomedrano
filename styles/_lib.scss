@@ -1,6 +1,6 @@
 $sizeArray: (12, 14, 16, 24, 32, 40);
-$weightArray: (100, 400, 700);
-$distanceArray: (0, 1, 5, 10, 20, 30, 40);
+$weightArray: (300, 400, 700);
+$distanceArray: (0, 1, 5, 10, 20, 30, 40, auto);
 
 .align-items-center {
   display: flex;
@@ -13,13 +13,20 @@ $distanceArray: (0, 1, 5, 10, 20, 30, 40);
 .d-block {
   display: block;
 }
+.text-underline {
+  text-decoration: underline;
+}
+.border-bottom {
+  border-bottom: 1px solid;
+}
 
 @include iterate-props-map(
   'c',
   'color',
   (
     'link': var(--color-link),
-    'primary': var(--color-primary)
+    'primary': var(--color-primary),
+    'muted': var(--color-muted)
   )
 );
 @include iterate-props-map(
@@ -35,9 +42,12 @@ $distanceArray: (0, 1, 5, 10, 20, 30, 40);
 @include iterate-props-arr('fs', ('font-size'), $sizeArray, 'px');
 @include iterate-props-arr('fw', ('font-weight'), $weightArray);
 @include iterate-props-arr('lh', ('line-height'), (1, 2));
+// Margin
 @include iterate-props-arr('mt', ('margin-top'), $distanceArray, 'px');
 @include iterate-props-arr('ml', ('margin-left'), $distanceArray, 'px');
 @include iterate-props-arr('mr', ('margin-right'), $distanceArray, 'px');
+@include iterate-props-arr('mb', ('margin-bottom'), $distanceArray, 'px');
+// Padding
 @include iterate-props-arr('p', ('padding'), $distanceArray, 'px');
 @include iterate-props-arr('pl', ('padding-left'), $distanceArray, 'px');
 @include iterate-props-arr('pr', ('padding-right'), $distanceArray, 'px');

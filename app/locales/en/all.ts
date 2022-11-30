@@ -1,10 +1,9 @@
 export const t = {
   common: {
-    getInTouch: 'Get in touch'
-    // TODO: Change this for something more creative
+    getInTouch: 'e-mail is the wire'
   },
   description: {
-    part1: `Hello! I’m a 30 year old engineer from Bolivia whose main passion is to acquire real knowledge to the point
+    part1: `Hello! I’m a 30 year old engineer from Bolivia living in Germany whose main passion is to acquire real knowledge to the point
           where`,
     part2: 'initiative, creativity and intuition',
     part3: 'flow.',
@@ -15,8 +14,8 @@ export const t = {
   },
   section: {
     workingExperience: {
-      title: 'Working Experience',
-      as: 'as'
+      title: 'Experience',
+      linkButton: 'What & How'
     },
     education: {
       title: 'Education'

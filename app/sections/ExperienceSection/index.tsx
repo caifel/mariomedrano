@@ -10,10 +10,9 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 export const ExperienceSection: FC<IProps> = ({ workingExperience, className }) => {
   return (
     <section className={cns(className)}>
-      <h2 className="fs-24" id="experience">
-        <a className="align-items-center" href="#experience">
-          {t.section.workingExperience.title}
-        </a>
+      <h2 className="fs-24 justify-content-between" id="experience">
+        <a href="#experience">{t.section.workingExperience.title}</a>
+        <button className="c-link border-bottom fs-12 ml-auto">{t.section.workingExperience.linkButton}</button>
       </h2>
 
       <div className="mt-30">

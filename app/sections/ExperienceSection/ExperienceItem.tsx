@@ -1,5 +1,6 @@
 import cns from 'classnames';
 import { FC } from 'react';
+import { Space } from '../../ui/Space';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
   data: TWorkingExperience;
@@ -27,7 +28,7 @@ export const ExperienceItem: FC<IProps> = ({ className, data: { year, company, i
           <b className="fs-12">{industry}</b>
         </p>
         <p className="mt-5">
-          <span className="c-muted fs-12 fw-100">{role}</span>
+          <span className="c-muted fs-12 fw-300">{role}</span>
         </p>
       </div>
     </div>

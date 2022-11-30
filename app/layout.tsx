@@ -6,7 +6,7 @@ import HandByeIcon from './images/hand-bye.svg';
 import styles from './layout.module.scss';
 import { t } from './locales/en/all';
 const roboto = Roboto({
-  weight: ['100', '400', '700'],
+  weight: ['300', '400', '700'],
   subsets: ['latin']
 });
 
@@ -15,9 +15,9 @@ const Header: FC = () => {
     <header className="bg-section px-20 py-20">
       <h1 className="c-primary fs-32 fs-md-40 fw-400">{personalInfo.name}</h1>
       <div className="mt-10 mt-md-0">
-        <p className="fs-16 fs-md-24">{personalInfo.role}</p>
+        <p className="fs-16 fs-md-24 fw-300">{personalInfo.role}</p>
         <p className="mt-10">
-          <a className="c-link fs-14" href={`mailto:${personalInfo.email}`}>
+          <a className="c-link fs-14 fw-300" href={`mailto:${personalInfo.email}`}>
             {t.common.getInTouch}
           </a>
         </p>
@@ -36,7 +36,7 @@ const Footer: FC = () => {
         <b className="c-primary">{t.footer.part2}</b>
       </p>
       <p className="mt-10 mt-md-0 align-items-center">
-        <span className="fw-100">{t.footer.part3}</span>
+        <span className="fw-300">{t.footer.part3}</span>
         <HandByeIcon className="ml-10 c-primary" />
       </p>
     </footer>
