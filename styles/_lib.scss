@@ -14,12 +14,6 @@ $distanceArray: (0, 1, 5, 10, 20, 30, 40);
   display: block;
 }
 
-.text-mix {
-  > *:not(:first-child) {
-    margin-left: 5px;
-  }
-}
-
 @include iterate-props-map(
   'c',
   'color',
@@ -32,7 +26,10 @@ $distanceArray: (0, 1, 5, 10, 20, 30, 40);
   'bg',
   'background-color',
   (
-    'section': var(--bg-section)
+    'section': var(--bg-section),
+    'muted': var(--bg-muted),
+    'primary': var(--bg-primary),
+    'primary-50': var(--bg-primary-50)
   )
 );
 @include iterate-props-arr('fs', ('font-size'), $sizeArray, 'px');

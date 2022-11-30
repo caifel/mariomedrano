@@ -17,8 +17,8 @@ export const ExperienceSection: FC<IProps> = ({ workingExperience, className }) 
       </h2>
 
       <div className="mt-30">
-        {workingExperience.map((experience) => (
-          <ExperienceItem key={experience.company} data={experience} />
+        {workingExperience.map((experience, index) => (
+          <ExperienceItem className={index > 0 ? 'mt-20' : ''} key={experience.company} data={experience} />
         ))}
       </div>
     </section>

@@ -1,8 +1,10 @@
 type TWorkingExperience = {
+  current?: boolean;
   year: number;
   company: string;
   industry: string;
   role: string;
+  url?: string;
 };
 type TEducation = {
   year: number;

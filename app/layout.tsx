@@ -18,12 +18,7 @@ const Header: FC = () => {
         <p className="fs-16 fs-md-24">{personalInfo.role}</p>
         <p className="mt-10">
           <a className="c-link fs-14" href={`mailto:${personalInfo.email}`}>
-            {personalInfo.email}
-          </a>
-        </p>
-        <p className="mt-10">
-          <a className="c-link fs-14" href={`tel:${personalInfo.phone.split(' ').join('')}`}>
-            {personalInfo.phone}
+            {t.common.getInTouch}
           </a>
         </p>
       </div>
@@ -50,7 +45,7 @@ const Footer: FC = () => {
 
 const RootLayout: FC<any> = ({ children }) => {
   return (
-    <html className={roboto.className} lang="en" data-theme="dark">
+    <html className={roboto.className} lang="en" data-theme="light">
       <head />
       <body className={styles.root}>
         <Header />

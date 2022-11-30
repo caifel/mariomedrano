@@ -1,23 +1,33 @@
+import cns from 'classnames';
 import { FC } from 'react';
-import { t } from '../../locales/en/all';
-import styles from './ExperienceItem.module.scss';
 
-type TProps = {
+interface IProps extends React.HTMLAttributes<HTMLDivElement> {
   data: TWorkingExperience;
-};
+}
 
-export const ExperienceItem: FC<TProps> = ({ data: { year, company, industry, role } }) => {
+export const ExperienceItem: FC<IProps> = ({ className, data: { year, company, industry, role, current, url } }) => {
   return (
-    <div key={company} className={styles.root}>
-      <div className={styles.year}>
-        <span className="fs-12 fw-100">{year}</span>
+    <div key={company} className={cns(className, 'align-items-center')}>
+      <div
+        className={cns('letter-logo', {
+          'bg-muted': !current,
+          'bg-primary-50': current
+        })}
+      >
+        <span className="fs-24">{company[0]}</span>
+        {/* year */}
       </div>
-      <div className={styles.content}>
-        <h3 className="fs-12 fs-600">{company}</h3>
-        <p className="text-mix mt-5">
-          <span className="fs-12 fw-100">{industry}</span>
-          <span className="c-primary fs-12">{t.section.workingExperience.as}</span>
-          <span className="c-muted fs-12">{role}</span>
+      <div className="ml-30">
+        <h3 className="c-primary fs-12">
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            {company}
+          </a>
+        </h3>
+        <p className="mt-5">
+          <b className="fs-12">{industry}</b>
+        </p>
+        <p className="mt-5">
+          <span className="c-muted fs-12 fw-100">{role}</span>
         </p>
       </div>
     </div>
