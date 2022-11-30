@@ -13,9 +13,9 @@ const roboto = Roboto({
 const Header: FC = () => {
   return (
     <header className="bg-section px-20 py-20">
-      <h1 className="c-primary fs-32 fs-md-40 fw-400">{personalInfo.name}</h1>
+      <h1 className="c-primary fs-32 fw-400">{personalInfo.name}</h1>
       <div className="mt-10 mt-md-0">
-        <p className="fs-16 fs-md-24 fw-300">{personalInfo.role}</p>
+        <p className="fs-16 fw-300">{personalInfo.role}</p>
         <p className="mt-10">
           <a className="c-link fs-14 fw-300" href={`mailto:${personalInfo.email}`}>
             {t.common.getInTouch}
