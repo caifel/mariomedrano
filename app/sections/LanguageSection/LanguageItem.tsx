@@ -7,10 +7,10 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 export const LanguageItem: FC<IProps> = ({ className, data }) => {
   return (
     <div className={className}>
-      <p className="c-primary fs-12 fw-300">
+      <p className="c-primary">
         <b>{data?.name}</b>
       </p>
-      <p className="fs-12 fw-300 mt-5">
+      <p className="mt-5">
         <span>{data?.level}</span>
       </p>
     </div>

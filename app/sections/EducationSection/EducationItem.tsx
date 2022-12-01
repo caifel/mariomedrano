@@ -1,24 +1,29 @@
+import cns from 'classnames';
 import { FC } from 'react';
-import styles from './EducationItem.module.scss';
 
-type TProps = {
+interface IProps extends React.HTMLAttributes<HTMLDivElement> {
   data: TEducation;
-};
+}
 
-export const EducationItem: FC<TProps> = ({ data: { year, name, school, type } }) => {
+export const EducationItem: FC<IProps> = ({ className, data: { year, name, school, type } }) => {
   return (
-    <div key={name} className={styles.root}>
-      <div className={styles.year}>
-        <span className="fs-12 fw-300">{year}</span>
+    <div className={cns(className, 'align-items-center')}>
+      <div
+        className={cns('letter-logo', {
+          'bg-muted': true
+          // 'bg-primary-50': current
+        })}
+      >
+        <span className="h2">{name[0]}</span>
+        {/* year */}
       </div>
-      <div className={styles.content}>
-        <h3 className="c-primary fs-12">{type}</h3>
-        <p className="fs-12 mt-5">
+      <div className="ml-30">
+        <h3 className="c-primary">{type}</h3>
+        <p className="mt-5">
           <b>{name}</b>
         </p>
-        <p>
-          {/* this can be a text or a text mix */}
-          <span className="c-muted fs-12 fw-300">{school}</span>
+        <p className="mt-5">
+          <span>{school}</span>
         </p>
       </div>
     </div>

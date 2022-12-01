@@ -9,8 +9,8 @@ import { Space } from './ui/Space';
 const Page = () => {
   return (
     <>
-      <div className="bg-section px-20 py-40 mt-1 mt-md-0">
-        <p className="fw-300 fs-14 lh-2">
+      <div className="h3 bg-section px-20 py-40 mt-1 mt-md-0">
+        <p className="lh-2">
           <span>{t.description.part1}</span>
           <Space />
           <b className="c-primary">{t.description.part2}</b>
@@ -18,7 +18,7 @@ const Page = () => {
           <span>{t.description.part3}</span>
         </p>
 
-        <p className="fw-300 fs-14 lh-2 mt-20">
+        <p className="lh-2 mt-20">
           <span>{t.description.part4}</span>
           <Space />
           <b className="c-primary">{t.description.part5}</b>

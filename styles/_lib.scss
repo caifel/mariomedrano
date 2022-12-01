@@ -1,9 +1,5 @@
-$sizeArray: (12, 14, 16, 24, 32, 40);
-$weightArray: (300, 400, 700);
 $distanceArray: (0, 1, 5, 10, 20, 30, 40, auto);
 
-@include iterate-props-arr('fs', ('font-size'), $sizeArray, 'px');
-@include iterate-props-arr('fw', ('font-weight'), $weightArray);
 @include iterate-props-arr('lh', ('line-height'), (1, 2));
 // Margin
 @include iterate-props-arr('mt', ('margin-top'), $distanceArray, 'px');
@@ -37,6 +33,12 @@ $distanceArray: (0, 1, 5, 10, 20, 30, 40, auto);
   )
 );
 
+.h2 {
+  font-size: 2rem;
+}
+.h3 {
+  font-size: 1.17rem;
+}
 .align-items-center {
   display: flex;
   align-items: center;
@@ -54,11 +56,3 @@ $distanceArray: (0, 1, 5, 10, 20, 30, 40, auto);
 .border-bottom {
   border-bottom: 1px solid;
 }
-
-// @media (min-width: 641px) {
-//   @include iterate-props-arr('fs-md', ('font-size'), $sizeArray, 'px');
-//   @include iterate-props-arr('fw-md', ('font-weight'), $weightArray);
-//   @include iterate-props-arr('mt-md', ('margin-top'), $distanceArray, 'px');
-//   @include iterate-props-arr('ml-md', ('margin-left'), $distanceArray, 'px');
-//   @include iterate-props-arr('p-md', ('padding'), $distanceArray, 'px');
-// }

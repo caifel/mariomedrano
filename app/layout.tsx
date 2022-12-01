@@ -13,11 +13,11 @@ const roboto = Roboto({
 const Header: FC = () => {
   return (
     <header className="bg-section px-20 py-20">
-      <h1 className="c-primary fs-32 fw-400">{personalInfo.name}</h1>
+      <h1 className="c-primary">{personalInfo.name}</h1>
       <div className="mt-10 mt-md-0">
-        <p className="fs-16 fw-300">{personalInfo.role}</p>
+        <p className="h3">{personalInfo.role}</p>
         <p className="mt-10">
-          <a className="c-link fs-14 fw-300" href={`mailto:${personalInfo.email}`}>
+          <a className="c-link" href={`mailto:${personalInfo.email}`}>
             {t.common.getInTouch}
           </a>
         </p>
@@ -28,7 +28,7 @@ const Header: FC = () => {
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-section px-20 py-40 mt-1 mt-md-0">
+    <footer className="h3 bg-section px-20 py-40 mt-1 mt-md-0">
       <p>
         <span>{t.footer.part1}</span>
       </p>
@@ -36,7 +36,7 @@ const Footer: FC = () => {
         <b className="c-primary">{t.footer.part2}</b>
       </p>
       <p className="mt-10 mt-md-0 align-items-center">
-        <span className="fw-300">{t.footer.part3}</span>
+        <span>{t.footer.part3}</span>
         <HandByeIcon className="ml-10 c-primary" />
       </p>
     </footer>

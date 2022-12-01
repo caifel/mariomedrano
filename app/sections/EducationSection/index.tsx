@@ -10,15 +10,15 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 export const EducationSection: FC<IProps> = ({ educationList, className }) => {
   return (
     <section className={cns(className)}>
-      <h2 className="fs-24" id="education">
+      <h2 id="education">
         <a className="align-items-center" href="#education">
           {t.section.education.title}
         </a>
       </h2>
 
       <div className="mt-30">
-        {educationList.map((item) => (
-          <EducationItem key={item.name} data={item} />
+        {educationList.map((item, index) => (
+          <EducationItem className={index > 0 ? 'mt-20' : ''} key={item.name} data={item} />
         ))}
       </div>
     </section>
