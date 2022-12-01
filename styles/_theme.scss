@@ -5,16 +5,15 @@
   --color-light: #e5e5e5;
   --color-gray: #aeaeae;
   --color-purple: #543fd7;
-  --color-light-purple: #a8a8ff;
   --color-light-blue: #55acee;
   --color-green: #7ca64f;
   --color-green-50: #7ca64f90;
-  --color-red: #d75454;
-  --color-red-50: #d754547d;
+  --color-red: #dc3545;
+  --color-red-50: #dc354590;
 }
 
 html[data-theme='light'] {
-  --color-link: var(--color-light-purple);
+  --color-link: var(--color-purple);
   --color-default: var(--color-black);
   --color-primary: var(--color-red);
   --color-muted: var(--color-gray);

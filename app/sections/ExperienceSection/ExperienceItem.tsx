@@ -1,6 +1,5 @@
 import cns from 'classnames';
 import { FC } from 'react';
-import { Space } from '../../ui/Space';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
   data: TWorkingExperience;
