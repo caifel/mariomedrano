@@ -45,7 +45,7 @@ const Footer: FC = () => {
 
 const RootLayout: FC<any> = ({ children }) => {
   return (
-    <html className={roboto.className} lang="en" data-theme="light">
+    <html className={roboto.className} lang="en" data-theme="dark">
       <head />
       <body className={styles.root}>
         <Header />
