@@ -1,11 +1,15 @@
 import cns from 'classnames';
 import { FC } from 'react';
+import { Space } from '../../ui/Space';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
   data: TWorkingExperience;
 }
 
-export const ExperienceItem: FC<IProps> = ({ className, data: { year, company, industry, role, current, url } }) => {
+export const ExperienceItem: FC<IProps> = ({
+  className,
+  data: { displayTimePeriod, company, industry, role, current, url }
+}) => {
   return (
     <div className={cns(className, 'align-items-center')}>
       <div
@@ -15,9 +19,8 @@ export const ExperienceItem: FC<IProps> = ({ className, data: { year, company, i
         })}
       >
         <span className="h2">{company[0]}</span>
-        {/* year */}
       </div>
-      <div className="ml-30">
+      <div className="ml-30 lh-2">
         <h3 className="c-primary">
           {url ? (
             <a href={url} target="_blank" rel="noopener noreferrer">
@@ -27,11 +30,12 @@ export const ExperienceItem: FC<IProps> = ({ className, data: { year, company, i
             company
           )}
         </h3>
-        <p className="mt-5">
-          <b>{industry}</b>
+        <p>
+          <span>{industry}</span>
         </p>
-        <p className="mt-5">
-          <span>{role}</span>
+        <p>
+          <b>{role}</b>
+          <span>{` / ${displayTimePeriod}`}</span>
         </p>
       </div>
     </div>

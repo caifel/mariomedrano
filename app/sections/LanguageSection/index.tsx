@@ -19,7 +19,7 @@ export const LanguageSection: FC<IProps> = ({ className, languageList }) => {
       </h2>
       <div className="mt-30">
         {languageList.map((language, index) => (
-          <LanguageItem className={index > 0 ? 'mt-20' : ''} key={language.name} data={language} />
+          <LanguageItem className={index > 0 ? 'mt-30' : ''} key={language.name} data={language} />
         ))}
       </div>
     </section>

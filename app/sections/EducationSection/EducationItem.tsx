@@ -17,12 +17,12 @@ export const EducationItem: FC<IProps> = ({ className, data: { year, name, schoo
         <span className="h2">{name[0]}</span>
         {/* year */}
       </div>
-      <div className="ml-30">
+      <div className="ml-30 lh-2">
         <h3 className="c-primary">{type}</h3>
-        <p className="mt-5">
+        <p>
           <b>{name}</b>
         </p>
-        <p className="mt-5">
+        <p>
           <span>{school}</span>
         </p>
       </div>

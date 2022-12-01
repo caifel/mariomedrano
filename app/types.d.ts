@@ -1,6 +1,6 @@
 type TWorkingExperience = {
   current?: boolean;
-  year: number;
+  displayTimePeriod?: string;
   company: string;
   industry: string;
   role: string;

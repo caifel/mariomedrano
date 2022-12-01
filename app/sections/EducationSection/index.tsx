@@ -18,7 +18,7 @@ export const EducationSection: FC<IProps> = ({ educationList, className }) => {
 
       <div className="mt-30">
         {educationList.map((item, index) => (
-          <EducationItem className={index > 0 ? 'mt-20' : ''} key={item.name} data={item} />
+          <EducationItem className={index > 0 ? 'mt-30' : ''} key={item.name} data={item} />
         ))}
       </div>
     </section>

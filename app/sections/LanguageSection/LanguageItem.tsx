@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import cns from 'classnames';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
   data: any;
@@ -6,11 +7,11 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const LanguageItem: FC<IProps> = ({ className, data }) => {
   return (
-    <div className={className}>
+    <div className={cns(className, 'lh-2')}>
       <p className="c-primary">
         <b>{data?.name}</b>
       </p>
-      <p className="mt-5">
+      <p>
         <span>{data?.level}</span>
       </p>
     </div>

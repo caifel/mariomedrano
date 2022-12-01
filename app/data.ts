@@ -15,38 +15,38 @@ export const personalInfo = {
 export const workingExperience: TWorkingExperience[] = [
   {
     current: true,
-    year: 2022,
     company: 'MAYD',
     role: 'Frontend',
     industry: 'E-commerce',
-    url: 'https://www.getmayd.com/'
+    url: 'https://www.getmayd.com/',
+    displayTimePeriod: '2022 - Present'
   },
   {
-    year: 2020,
     company: 'Palo Alto Networks',
     role: 'Frontend',
     industry: 'Security Industry',
-    url: 'https://www.paloaltonetworks.com/'
+    url: 'https://www.paloaltonetworks.com/',
+    displayTimePeriod: '2020 - 2022'
   },
   {
-    year: 2019,
     company: 'Staywell',
     role: 'Fullstack',
     industry: 'Health care Industry',
-    url: 'https://www.staywell.com/'
+    url: 'https://www.staywell.com/',
+    displayTimePeriod: '2019 - 2020'
   },
   {
-    year: 2014,
     company: 'Xtime',
     role: 'FrontEnd',
     industry: 'Automative Industry',
-    url: 'https://www.xtime.com/'
+    url: 'https://www.xtime.com/',
+    displayTimePeriod: '2014 - 2019'
   },
   {
-    year: 2013,
     company: 'Hanantek',
     role: 'Intern',
-    industry: 'Accountability project'
+    industry: 'Accountability project',
+    displayTimePeriod: '2013'
   }
 ];
 export const education: TEducation[] = [

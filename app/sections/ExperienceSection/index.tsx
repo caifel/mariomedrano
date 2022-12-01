@@ -1,7 +1,7 @@
-import { FC } from 'react';
 import cns from 'classnames';
-import { ExperienceItem } from './ExperienceItem';
+import { FC } from 'react';
 import { t } from '../../locales/en/all';
+import { ExperienceItem } from './ExperienceItem';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
   workingExperience: TWorkingExperience[];
@@ -17,7 +17,7 @@ export const ExperienceSection: FC<IProps> = ({ workingExperience, className }) 
 
       <div className="mt-30">
         {workingExperience.map((experience, index) => (
-          <ExperienceItem className={index > 0 ? 'mt-20' : ''} key={experience.company} data={experience} />
+          <ExperienceItem className={index > 0 ? 'mt-30' : ''} key={experience.company} data={experience} />
         ))}
       </div>
     </section>
