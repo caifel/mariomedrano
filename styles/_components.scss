@@ -1,8 +1,24 @@
+.header-container {
+  background-color: var(--bg-card);
+  height: 4rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  .left-icon {
+    position: absolute;
+    top: 35%;
+    left: 2rem;
+  }
+  h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
 .card {
   background-color: var(--bg-card);
   padding: 2.5rem 2rem;
 }
-
 .badge-container {
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +40,14 @@
   display: flex;
   justify-content: center;
 }
+.link {
+  color: var(--color-link);
+  font-size: 1rem;
+  font-weight: 300;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid;
+}
+
 @media (min-width: 641px) {
   .card {
     padding: 2.5rem 3rem;

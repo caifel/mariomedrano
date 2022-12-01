@@ -11,7 +11,7 @@ export const HomeHeader: FC<IProps> = ({ className }) => {
       <h1 className="c-primary">{personalInfo.name}</h1>
       <p className="h3">{personalInfo.role}</p>
       <p>
-        <a className="c-link" href={`mailto:${personalInfo.email}`}>
+        <a className="link" href={`mailto:${personalInfo.email}`}>
           {t.common.getInTouch}
         </a>
       </p>

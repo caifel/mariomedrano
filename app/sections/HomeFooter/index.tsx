@@ -1,13 +1,14 @@
 import cns from 'classnames';
 import { FC } from 'react';
-import HandByeIcon from '../images/hand-bye.svg';
-import { t } from '../locales/en/all';
+import HandByeIcon from '../../images/hand-bye.svg';
+import { t } from '../../locales/en/all';
+import styles from './styles.module.scss';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const HomeFooter: FC<IProps> = ({ className }) => {
   return (
-    <footer className={cns(className, 'h3 lh-2')}>
+    <footer className={cns(className, styles.custom, 'h3 lh-2')}>
       <p>
         <span>{t.footer.part1}</span>
       </p>
