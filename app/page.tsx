@@ -9,7 +9,7 @@ import { Space } from './ui/Space';
 const Page = () => {
   return (
     <>
-      <div className="h3 bg-section px-20 py-40 mt-1 mt-md-0">
+      <div className="h3 card mt-1">
         <p className="lh-2">
           <span>{t.description.part1}</span>
           <Space />
@@ -27,10 +27,10 @@ const Page = () => {
         </p>
       </div>
 
-      <ExperienceSection className="bg-section px-20 py-40 mt-1 mt-md-0" workingExperience={workingExperience} />
-      <EducationSection className="bg-section px-20 py-40 mt-1 mt-md-0" educationList={education} />
-      <LanguageSection className="bg-section px-20 py-40 mt-1 mt-md-0" languageList={languages} />
-      <HobbySection className="bg-section px-20 py-40 mt-1 mt-md-0" hobbies={hobbies} />
+      <ExperienceSection className="card mt-1" workingExperience={workingExperience} />
+      <EducationSection className="card mt-1" educationList={education} />
+      <LanguageSection className="card mt-1" languageList={languages} />
+      <HobbySection className="card mt-1" hobbies={hobbies} />
     </>
   );
 };

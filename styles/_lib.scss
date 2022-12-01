@@ -6,12 +6,6 @@ $distanceArray: (0, 1, 5, 10, 20, 30, 40, auto);
 @include iterate-props-arr('ml', ('margin-left'), $distanceArray, 'px');
 @include iterate-props-arr('mr', ('margin-right'), $distanceArray, 'px');
 @include iterate-props-arr('mb', ('margin-bottom'), $distanceArray, 'px');
-// Padding
-@include iterate-props-arr('p', ('padding'), $distanceArray, 'px');
-@include iterate-props-arr('pl', ('padding-left'), $distanceArray, 'px');
-@include iterate-props-arr('pr', ('padding-right'), $distanceArray, 'px');
-@include iterate-props-arr('px', ('padding-left', 'padding-right'), $distanceArray, 'px');
-@include iterate-props-arr('py', ('padding-top', 'padding-bottom'), $distanceArray, 'px');
 
 @include iterate-props-map(
   'c',
@@ -26,7 +20,6 @@ $distanceArray: (0, 1, 5, 10, 20, 30, 40, auto);
   'bg',
   'background-color',
   (
-    'section': var(--bg-section),
     'muted': var(--bg-muted),
     'primary': var(--bg-primary),
     'primary-50': var(--bg-primary-50)

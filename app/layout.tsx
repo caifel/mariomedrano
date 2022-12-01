@@ -12,9 +12,9 @@ const roboto = Roboto({
 
 const Header: FC = () => {
   return (
-    <header className="bg-section px-20 py-20">
+    <header className="card">
       <h1 className="c-primary">{personalInfo.name}</h1>
-      <div className="mt-10 mt-md-0">
+      <div className="mt-10">
         <p className="h3">{personalInfo.role}</p>
         <p className="mt-10">
           <a className="c-link" href={`mailto:${personalInfo.email}`}>
@@ -28,14 +28,14 @@ const Header: FC = () => {
 
 const Footer: FC = () => {
   return (
-    <footer className="h3 bg-section px-20 py-40 mt-1 mt-md-0">
+    <footer className="card h3 mt-1">
       <p>
         <span>{t.footer.part1}</span>
       </p>
-      <p className="mt-10 mt-md-0">
+      <p className="mt-10">
         <b className="c-primary">{t.footer.part2}</b>
       </p>
-      <p className="mt-10 mt-md-0 align-items-center">
+      <p className="mt-10 align-items-center">
         <span>{t.footer.part3}</span>
         <HandByeIcon className="ml-10 c-primary" />
       </p>

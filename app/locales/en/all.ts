@@ -1,6 +1,6 @@
 export const t = {
   common: {
-    getInTouch: 'e-mail is the wire'
+    getInTouch: 'Follow the white rabbit'
   },
   description: {
     part1: `Hello! I’m a 30 year old engineer from Bolivia living in Germany whose main passion is to acquire real knowledge to the point
