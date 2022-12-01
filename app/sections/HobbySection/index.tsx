@@ -15,9 +15,9 @@ export const HobbySection: FC<IProps> = ({ hobbies, className }) => {
         </a>
       </h2>
 
-      <div className="mt-10">
+      <div className="mt-30 badge-container">
         {hobbies.map((hobby) => (
-          <span className="badge-primary mr-20 mt-20" key={hobby}>
+          <span className="badge-primary" key={hobby}>
             {hobby}
           </span>
         ))}

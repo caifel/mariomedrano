@@ -2,11 +2,15 @@
   background-color: var(--bg-card);
   padding: 2.5rem 2rem;
 }
+
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
 .badge {
   padding: 5px 10px;
   border-radius: 5px;
-  width: fit-content;
-  display: inline-block;
 }
 .badge-primary {
   @extend .badge;
