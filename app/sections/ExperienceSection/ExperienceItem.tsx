@@ -20,9 +20,13 @@ export const ExperienceItem: FC<IProps> = ({ className, data: { year, company, i
       </div>
       <div className="ml-30">
         <h3 className="c-primary">
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            {company}
-          </a>
+          {url ? (
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              {company}
+            </a>
+          ) : (
+            company
+          )}
         </h3>
         <p className="mt-5">
           <b>{industry}</b>
