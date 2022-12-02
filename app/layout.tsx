@@ -1,6 +1,7 @@
 import { Roboto } from '@next/font/google';
 import { FC } from 'react';
 import '../styles/index.scss';
+
 const roboto = Roboto({
   weight: ['300', '400', '700'],
   subsets: ['latin']

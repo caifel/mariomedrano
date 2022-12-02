@@ -9,15 +9,17 @@ import { LanguageSection } from './sections/LanguageSection';
 
 const Page = () => {
   return (
-    <main>
+    <>
       <HomeHeader className="card" />
-      <DescriptionSection className="card mt-1" />
-      <ExperienceSection className="card mt-1" workingExperience={workingExperience} />
-      <EducationSection className="card mt-1" educationList={education} />
-      <LanguageSection className="card mt-1" languageList={languages} />
-      <HobbySection className="card mt-1" hobbies={hobbies} />
+      <main>
+        <DescriptionSection className="card mt-1" />
+        <ExperienceSection className="card mt-1" workingExperience={workingExperience} />
+        <EducationSection className="card mt-1" educationList={education} />
+        <LanguageSection className="card mt-1" languageList={languages} />
+        <HobbySection className="card mt-1" hobbies={hobbies} />
+      </main>
       <HomeFooter className="card mt-1" />
-    </main>
+    </>
   );
 };
 

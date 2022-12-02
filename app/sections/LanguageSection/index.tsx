@@ -10,9 +10,9 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const LanguageSection: FC<IProps> = ({ className, languageList }) => {
   return (
-    <section className={cns(className)}>
-      <h2 id="language">
-        <a className="align-items-center" href="#language">
+    <section className={cns(className)} id="language-section">
+      <h2>
+        <a className="align-items-center" href="#language-section">
           {t.section.languages.title}
           <GlobeIcon className="ml-10 c-primary" />
         </a>

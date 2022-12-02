@@ -22,7 +22,7 @@ html[data-theme='light'] {
   --bg-primary: var(--color-red);
   --bg-primary-50: var(--color-red-50);
   --bg-muted: var(--color-gray);
-  // --border-color: var(--color-gray);
+  --border-color: var(--color-dark);
   --border-color-primary: var(--color-red-50);
 }
 
@@ -36,6 +36,6 @@ html[data-theme='dark'] {
   --bg-primary: var(--color-green);
   --bg-primary-50: var(--color-green-50);
   --bg-muted: var(--color-dark);
-  // --border-color: var(--color-gray);
+  --border-color: var(--color-dark);
   --border-color-primary: var(--color-green-50);
 }

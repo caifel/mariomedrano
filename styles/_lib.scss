@@ -1,6 +1,6 @@
 $distanceArray: (0, 1, 5, 10, 20, 30, 40, auto);
 
-@include iterate-props-arr('lh', ('line-height'), (1, 2));
+@include iterate-props-arr('lh', ('line-height'), (1, 2, 3));
 // Margin
 @include iterate-props-arr('mt', ('margin-top'), $distanceArray, 'px');
 @include iterate-props-arr('ml', ('margin-left'), $distanceArray, 'px');

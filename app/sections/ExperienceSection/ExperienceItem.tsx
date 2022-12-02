@@ -1,7 +1,7 @@
 import cns from 'classnames';
 import { FC } from 'react';
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+interface IProps extends React.HTMLAttributes<HTMLAreaElement> {
   data: TWorkingExperience;
 }
 
@@ -10,7 +10,7 @@ export const ExperienceItem: FC<IProps> = ({
   data: { displayTimePeriod, company, industry, role, current, url }
 }) => {
   return (
-    <div className={cns(className, 'align-items-center')}>
+    <article className={cns(className, 'align-items-center')}>
       <div
         className={cns('letter-logo', {
           'bg-muted': !current,
@@ -37,6 +37,6 @@ export const ExperienceItem: FC<IProps> = ({
           <span>{` / ${displayTimePeriod}`}</span>
         </p>
       </div>
-    </div>
+    </article>
   );
 };

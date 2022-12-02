@@ -15,7 +15,7 @@ export const t = {
   section: {
     workingExperience: {
       title: 'Experience',
-      linkButton: 'What & How'
+      linkButton: 'Why, What & How'
     },
     education: {
       title: 'Education'

@@ -9,9 +9,9 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const EducationSection: FC<IProps> = ({ educationList, className }) => {
   return (
-    <section className={cns(className)}>
-      <h2 id="education">
-        <a className="align-items-center" href="#education">
+    <section className={cns(className)} id="education-section">
+      <h2>
+        <a className="align-items-center" href="#education-section">
           {t.section.education.title}
         </a>
       </h2>

@@ -6,8 +6,10 @@
   align-items: center;
   .left-icon {
     position: absolute;
-    top: 35%;
+    top: 1.4rem; // (4rem - 1.2rem) / 2
     left: 2rem;
+    width: 1.2rem;
+    height: 1.2rem;
   }
   h1 {
     flex: 1;
@@ -22,11 +24,13 @@
 .badge-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 2rem;
+  gap: 1rem 1rem;
 }
 .badge {
   padding: 5px 10px;
   border-radius: 5px;
+  border: 1px solid var(--border-color);
+  color: var(--color-default);
 }
 .badge-primary {
   @extend .badge;
