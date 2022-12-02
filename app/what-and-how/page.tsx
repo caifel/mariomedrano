@@ -19,7 +19,7 @@ const Page = () => {
         <p className="lh-2 mt-20">
           <span>
             {
-              'To be truthful by doing why I do I have the feeling of actively shaping the world and that feeling is priceless.'
+              'To be truthful by doing what I do I have the feeling of actively shaping the world and that feeling is priceless.'
             }
           </span>
         </p>
