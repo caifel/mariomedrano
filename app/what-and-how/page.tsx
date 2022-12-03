@@ -5,7 +5,7 @@ import { Space } from '../ui/Space';
 
 const Page = () => {
   return (
-    <main>
+    <main className="blog-page">
       <header className="header-container">
         <Link href="/" aria-label="back">
           <HeaderBackIcon className="left-icon c-primary" />
@@ -13,13 +13,11 @@ const Page = () => {
         <h1>{'Why, What & how?'}</h1>
       </header>
       <article className="card mt-10">
-        <h2 className="h3 c-primary">
-          <b>{'The Why'}</b>
-        </h2>
+        <h2>{'The Why'}</h2>
         <p className="lh-2 mt-20">
           <span>
             {
-              'To be truthful by doing what I do I have the feeling of actively shaping the world and that feeling is priceless.'
+              'To be truthful by doing what I do I have the feeling of actively shaping the world and that is priceless.'
             }
           </span>
         </p>
@@ -29,13 +27,11 @@ const Page = () => {
               'As well I consider Software Development to be similar to chess and philosophy (both hobbies of mine), it is a never ending journey of learning and improving.'
             }
           </span>
-          <b>{' Call me romantic but software is like life.'}</b>
+          <span className="c-primary">{' Call me romantic but software is life.'}</span>
         </p>
       </article>
       <article className="card mt-1">
-        <h2 className="h3 c-primary">
-          <b>{'The what'}</b>
-        </h2>
+        <h2>{'The What'}</h2>
         <p className="lh-2 mt-20">
           <span>{'So far during this journey I have implemented a variety of features such as:'}</span>
         </p>
@@ -60,9 +56,7 @@ const Page = () => {
         </ul>
       </article>
       <article className="card mt-1">
-        <h2 className="h3 c-primary">
-          <b>The How</b>
-        </h2>
+        <h2>The How</h2>
         <p className="lh-2 mt-20">
           <span>
             {
@@ -97,7 +91,7 @@ const Page = () => {
         </ul>
         <p className="lh-2 mt-20">
           <span>{'Once I put my hands to work I consider a personal challenge to end up with a good and'}</span>
-          <b className="c-primary">{' performant'}</b>
+          <span className="c-primary">{' performant'}</span>
           <span>{' solution.'}</span>
         </p>
         <ul className="mt-20 lh-2">
@@ -118,7 +112,7 @@ const Page = () => {
         </ul>
         <p className="lh-2 mt-20">
           <span>
-            {'And if the team strategy considers as a good investment of the time to make the code bullet proof, then:'}
+            {'And if the team strategy considers as a good investment of time to make the code bullet proof then:'}
           </span>
         </p>
         <ul className="mt-20 lh-2">

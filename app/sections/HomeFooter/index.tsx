@@ -13,7 +13,7 @@ export const HomeFooter: FC<IProps> = ({ className }) => {
         <span>{t.footer.part1}</span>
       </p>
       <p>
-        <b className="c-primary">{t.footer.part2}</b>
+        <span className="c-primary">{t.footer.part2}</span>
       </p>
       <p className="align-items-center">
         <span>{t.footer.part3}</span>

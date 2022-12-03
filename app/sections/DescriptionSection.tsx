@@ -11,7 +11,7 @@ export const DescriptionSection: FC<IProps> = ({ className }) => {
       <p className="lh-2">
         <span>{t.description.part1}</span>
         <Space />
-        <b className="c-primary">{t.description.part2}</b>
+        <span className="c-primary">{t.description.part2}</span>
         <Space />
         <span>{t.description.part3}</span>
       </p>
@@ -19,7 +19,7 @@ export const DescriptionSection: FC<IProps> = ({ className }) => {
       <p className="lh-2 mt-20">
         <span>{t.description.part4}</span>
         <Space />
-        <b className="c-primary">{t.description.part5}</b>
+        <span className="c-primary">{t.description.part5}</span>
         <Space />
         <span>{t.description.part6}</span>
       </p>
