@@ -8,6 +8,7 @@ body {
   background-color: var(--bg-body);
   max-width: 500px;
   margin: 0 auto;
+  transition: background-color 0.2s ease-in-out;
 }
 
 h1,
