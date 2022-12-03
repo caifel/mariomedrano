@@ -6,6 +6,8 @@
 
 export const personalInfo = {
   name: 'Mario Medrano',
+  alias: 'Caifel',
+  keywords: ['Software Engineer', 'Web Developer', 'Caifel', 'React', 'Next.js'],
   description:
     'I’m a 30 year old engineer whose main passion is to acquire real knowledge to the point where initiative, creativity and intuition flow.',
   role: 'React / Next.js / MERN Stack',
