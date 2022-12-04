@@ -6,10 +6,12 @@
   --color-gray: #aeaeae;
   --color-purple: #543fd7;
   --color-light-blue: #55acee;
-  --color-green: #7ca64f;
-  --color-green-50: #7ca64f90;
+  // --color-green: #7ca64f;
+  // --color-green-90: #7ca64f90;
+  --color-green: #ffe102;
+  --color-green-90: #ffe10290;
   --color-red: #dc3545;
-  --color-red-50: #dc354590;
+  --color-red-90: #dc354590;
 
   --border-radius: 0.8rem;
 }
@@ -22,10 +24,10 @@ html[data-theme='light'] {
   --bg-card: var(--color-white);
   --bg-body: var(--color-light);
   --bg-primary: var(--color-red);
-  --bg-primary-50: var(--color-red-50);
+  --bg-primary-50: var(--color-red-90);
   --bg-muted: var(--color-gray);
   --border-color: var(--color-dark);
-  --border-color-primary: var(--color-red-50);
+  --border-color-primary: var(--color-red-90);
 }
 
 html[data-theme='dark'] {
@@ -36,8 +38,8 @@ html[data-theme='dark'] {
   --bg-card: var(--color-black);
   --bg-body: var(--color-dark);
   --bg-primary: var(--color-green);
-  --bg-primary-50: var(--color-green-50);
+  --bg-primary-50: var(--color-green-90);
   --bg-muted: var(--color-dark);
   --border-color: var(--color-dark);
-  --border-color-primary: var(--color-green-50);
+  --border-color-primary: var(--color-green-90);
 }
