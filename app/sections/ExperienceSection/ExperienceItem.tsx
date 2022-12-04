@@ -14,7 +14,7 @@ export const ExperienceItem: FC<IProps> = ({
       <div
         className={cns('letter-logo', {
           'bg-muted': !current,
-          'bg-primary-50': current
+          'bg-primary-90': current
         })}
       >
         <span className="h2">{company[0]}</span>

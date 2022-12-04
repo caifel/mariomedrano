@@ -17,17 +17,17 @@ const Page = () => {
         <p className="lh-2 mt-20">
           <span>
             {
-              'To be truthful by doing what I do I have the feeling of actively shaping the world and that is priceless.'
+              'To be truthful by doing what I do I have the feeling of actively shaping the world. And that idea even if it is a bit naive, it is priceless.'
             }
           </span>
         </p>
         <p className="lh-2 mt-20">
           <span>
             {
-              'As well I consider Software Development to be similar to chess and philosophy (both hobbies of mine), it is a never ending journey of learning and improving.'
+              'As well I consider Software Development to be similar to chess and philosophy, it is a never ending journey of learning and improving.'
             }
           </span>
-          <span className="c-primary">{' Call me romantic but software is life.'}</span>
+          <span className="c-primary">{' Call me romantic but I find it to be similar to life.'}</span>
         </p>
       </article>
       <article className="card mt-1">
@@ -55,7 +55,7 @@ const Page = () => {
           <li className="badge-primary">{'Documentations'}</li>
         </ul>
       </article>
-      <article className="card mt-1">
+      <article className="card mt-1 last-card">
         <h2>The How</h2>
         <p className="lh-2 mt-20">
           <span>

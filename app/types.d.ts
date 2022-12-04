@@ -7,7 +7,7 @@ type TWorkingExperience = {
   url?: string;
 };
 type TEducation = {
-  year: number;
+  active?: boolean;
   type: string;
   name: string;
   school: string;

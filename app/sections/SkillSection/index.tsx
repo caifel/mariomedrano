@@ -13,7 +13,7 @@ export const SkillSection: FC<IProps> = () => {
         <ul className="badge-container mt-20">
           {['React', 'Nextjs', 'Redux', 'Javascript', 'HTML', 'CSS', 'NodeJs', 'GIT', 'Jest', 'UX', 'Google'].map(
             (skill) => (
-              <li className="badge" key={skill}>
+              <li className="badge-primary" key={skill}>
                 {skill}
               </li>
             )

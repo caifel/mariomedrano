@@ -4,6 +4,9 @@
     font-size: 1.5rem;
     font-weight: 300;
   }
+  .last-card {
+    padding-bottom: 4rem;
+  }
 }
 .header-container {
   background-color: var(--bg-card);
@@ -43,11 +46,12 @@
   color: var(--color-primary);
 }
 .letter-logo {
-  width: 40px;
-  height: 40px;
+  width: 3.5rem;
+  height: 3.5rem;
   align-items: center;
   display: flex;
   justify-content: center;
+  flex-shrink: 0;
 }
 .link {
   color: var(--color-link);
@@ -61,8 +65,8 @@
   .card {
     padding: 2.5rem 3rem;
   }
-  .letter-logo {
-    width: 50px;
-    height: 50px;
-  }
+  // .letter-logo {
+  //   width: 50px;
+  //   height: 50px;
+  // }
 }

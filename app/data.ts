@@ -53,16 +53,20 @@ export const workingExperience: TWorkingExperience[] = [
 ];
 export const education: TEducation[] = [
   {
-    year: 2017,
-    type: 'Course',
-    name: 'Higher Education Teaching',
-    school: 'Bolivian Catholic University “San Pablo”'
+    active: true,
+    name: 'Autodidact',
+    type: 'General',
+    school: 'Docs, Youtube, Stackoverflow, Github, Own projects, Books, Blogs, etc.'
   },
   {
-    year: 2010,
-    type: 'Bachelor’s Degree',
+    name: 'Higher Education Teaching',
+    type: 'Course',
+    school: 'Bolivian Catholic University'
+  },
+  {
     name: 'System Engineering',
-    school: 'Bolivian Catholic University “San Pablo”'
+    type: 'Bachelor’s Degree',
+    school: 'Bolivian Catholic University'
   }
 ];
 export const languages: TLanguage[] = [
