@@ -14,13 +14,13 @@ const Page = () => {
       <HomeHeader className="card" />
       <main>
         <DescriptionSection className="card" />
-        <ExperienceSection className="card mt-1" workingExperience={workingExperience} />
-        <SkillSection className="card mt-1" />
-        <EducationSection className="card mt-1" educationList={education} />
-        <LanguageSection className="card mt-1" languageList={languages} />
-        <HobbySection className="card mt-1" hobbies={hobbies} />
+        <ExperienceSection className="card mt-px" workingExperience={workingExperience} />
+        <SkillSection className="card mt-px" />
+        <EducationSection className="card mt-px" educationList={education} />
+        <LanguageSection className="card mt-px" languageList={languages} />
+        <HobbySection className="card mt-px" hobbies={hobbies} />
       </main>
-      <HomeFooter className="card mt-1" />
+      <HomeFooter className="card mt-px" />
     </>
   );
 };

@@ -11,14 +11,14 @@ export const EducationSection: FC<IProps> = ({ educationList, className }) => {
   return (
     <section className={cns(className)} id="education-section">
       <h2>
-        <a className="align-items-center" href="#education-section">
+        <a className="flex items-center" href="#education-section">
           {t.section.education.title}
         </a>
       </h2>
 
-      <div className="mt-30">
+      <div className="mt-10">
         {educationList.map((item, index) => (
-          <EducationItem className={index > 0 ? 'mt-30' : ''} key={item.name} data={item} />
+          <EducationItem className={index > 0 ? 'mt-10' : ''} key={item.name} data={item} />
         ))}
       </div>
     </section>

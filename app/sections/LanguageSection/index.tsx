@@ -12,14 +12,14 @@ export const LanguageSection: FC<IProps> = ({ className, languageList }) => {
   return (
     <section className={cns(className)} id="language-section">
       <h2>
-        <a className="align-items-center" href="#language-section">
+        <a className="flex items-center" href="#language-section">
           {t.section.languages.title}
-          <GlobeIcon className="ml-10 c-primary" />
+          <GlobeIcon className="ml-2.5 text-red-500 dark:text-yellow-400" />
         </a>
       </h2>
-      <div className="mt-30">
+      <div className="mt-10">
         {languageList.map((language, index) => (
-          <LanguageItem className={index > 0 ? 'mt-30' : ''} key={language.name} data={language} />
+          <LanguageItem className={index > 0 ? 'mt-10' : ''} key={language.name} data={language} />
         ))}
       </div>
     </section>

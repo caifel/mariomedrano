@@ -11,16 +11,16 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 export const ExperienceSection: FC<IProps> = ({ workingExperience, className }) => {
   return (
     <section className={cns(className)} id="experience-section">
-      <h2 className="justify-content-between align-items-center">
+      <h2 className="flex items-center justify-between">
         <a href="#experience-section">{t.section.workingExperience.title}</a>
-        <Link href="/what-and-how" className="c-link">
-          <span className="link d-block">{t.section.workingExperience.linkButton}</span>
+        <Link href="/what-and-how">
+          <span className="link block">{t.section.workingExperience.linkButton}</span>
         </Link>
       </h2>
 
-      <div className="mt-30">
+      <div className="mt-10">
         {workingExperience.map((experience, index) => (
-          <ExperienceItem className={index > 0 ? 'mt-30' : ''} key={experience.company} data={experience} />
+          <ExperienceItem className={index > 0 ? 'mt-10' : ''} key={experience.company} data={experience} />
         ))}
       </div>
     </section>

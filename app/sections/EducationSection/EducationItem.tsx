@@ -7,17 +7,17 @@ interface IProps extends React.HTMLAttributes<HTMLAreaElement> {
 
 export const EducationItem: FC<IProps> = ({ className, data: { active, name, school, type } }) => {
   return (
-    <article className={cns(className, 'align-items-center')}>
+    <article className={cns(className, 'flex items-center')}>
       <div
-        className={cns('letter-logo', {
-          'bg-muted': !active,
-          'bg-primary-90': active
+        className={cns('w-14 h-14', 'flex items-center justify-center shrink-0', {
+          'bg-zinc-300 dark:bg-zinc-500': !active,
+          'bg-red-400 dark:bg-yellow-300/50': active
         })}
       >
-        <span className="h2">{name[0]}</span>
+        <span className="text-3xl">{name[0]}</span>
       </div>
-      <div className="ml-30 lh-2">
-        <h3 className="c-primary">{name}</h3>
+      <div className="ml-8">
+        <h3 className="text-red-500 dark:text-yellow-400">{name}</h3>
         <p>
           <b>{type}</b>
         </p>
