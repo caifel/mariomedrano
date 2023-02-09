@@ -1,0 +1,95 @@
+@mixin container {
+  @apply p-2
+    border rounded-md 
+    flex flex-col gap-1 
+    w-max 
+    relative
+    cursor-default;
+}
+@mixin amount-of-unit {
+  @apply text-sm tracking-tight;
+}
+@mixin price-per-unit {
+  @apply text-xs tracking-tight;
+}
+
+.variant {
+  @include container;
+  @apply bg-white border-gray-300;
+}
+.variant:hover {
+  @apply border-[#e64b32];
+}
+.variant.selected {
+  @apply bg-[#fef6f5] border-[#e64b32];
+}
+.variant > .amountOfUnit {
+  @include amount-of-unit;
+  @apply text-[#0c2638] font-normal;
+
+}
+.variant > .amountOfUnit.selected {
+  @apply text-[#0c2638] font-semibold;
+}
+.variant > .pricePerUnit {
+  @include price-per-unit;
+  @apply text-[#85939b] font-semibold;
+}
+.variant > .pricePerUnit.selected {
+  @apply text-[#85939b] font-semibold;
+}
+
+.outOfStockVariant {
+  @include container;
+  @apply bg-[#f2f3f4] border-[#e7e7e7];
+}
+.outOfStockVariant:hover {
+  @apply border-[#85939b];
+}
+.outOfStockVariant.selected {
+  @apply bg-[#f2f3f4] border-[#85939b];
+}
+.outOfStockVariant > .amountOfUnit {
+  @include amount-of-unit;
+  @apply text-[#bcc4cc] font-normal;
+}
+.outOfStockVariant > .amountOfUnit.selected {
+  @apply text-[#85939b] font-semibold;
+}
+.outOfStockVariant > .pricePerUnit {
+  @include price-per-unit;
+  @apply text-[#bcc4cc] font-normal;
+}
+.outOfStockVariant > .pricePerUnit.selected {
+  @apply text-[#85939b] font-semibold;
+}
+
+.discountVariant {
+  @include container;
+  @apply bg-white border-gray-300;
+}
+.discountVariant:hover {
+  @apply border-[#2eb67d];
+}
+.discountVariant.selected {
+  @apply bg-[#effef8] border-[#2eb67d];
+}
+.discountVariant > .amountOfUnit {
+  @include amount-of-unit;
+  @apply text-[#0c2638] font-normal;
+}
+.discountVariant > .amountOfUnit.selected {
+  @apply text-[#0c2638] font-semibold;
+}
+.discountVariant > .pricePerUnit {
+  @include price-per-unit;
+  @apply text-[#2eb67d] font-semibold;
+}
+.discountVariant > .pricePerUnit.selected {
+  @apply text-[#85939b] font-semibold;
+}
+.discountVariant > .discountIcon {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+}
