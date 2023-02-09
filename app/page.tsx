@@ -1,4 +1,5 @@
-import { education, hobbies, languages, workingExperience } from './data';
+import React from 'react';
+
 import { DescriptionSection } from './sections/DescriptionSection';
 import { EducationSection } from './sections/EducationSection';
 import { ExperienceSection } from './sections/ExperienceSection';
@@ -8,19 +9,21 @@ import { HobbySection } from './sections/HobbySection';
 import { LanguageSection } from './sections/LanguageSection';
 import { SkillSection } from './sections/SkillSection';
 
+import { education, hobbies, languages, workingExperience } from './data';
+
 const Page = () => {
   return (
     <>
       <HomeHeader className="card" />
       <main>
         <DescriptionSection className="card" />
-        <ExperienceSection className="card mt-1" workingExperience={workingExperience} />
-        <SkillSection className="card mt-1" />
-        <EducationSection className="card mt-1" educationList={education} />
-        <LanguageSection className="card mt-1" languageList={languages} />
-        <HobbySection className="card mt-1" hobbies={hobbies} />
+        <ExperienceSection className="card mt-px" workingExperience={workingExperience} />
+        <SkillSection className="card mt-px" />
+        <EducationSection className="card mt-px" educationList={education} />
+        <LanguageSection className="card mt-px" languageList={languages} />
+        <HobbySection className="card mt-px" hobbies={hobbies} />
       </main>
-      <HomeFooter className="card mt-1" />
+      <HomeFooter className="card mt-px" />
     </>
   );
 };

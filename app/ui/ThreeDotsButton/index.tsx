@@ -1,16 +1,15 @@
 'use client';
 
 import { FC } from 'react';
-import styles from './styles.module.scss';
 
 interface IProps extends React.HTMLAttributes<HTMLButtonElement> {}
 
 export const ThreeDotsButton: FC<IProps> = ({ onClick }) => {
   return (
-    <button onClick={onClick} className={styles.custom}>
-      <span aria-label="dark yellow theme"></span>
-      <span aria-label="light red theme"></span>
-      <span aria-label="light red theme"></span>
+    <button aria-label="Change Theme" onClick={onClick} className="flex items-center gap-3 h-8">
+      <span className="rounded-full h-2 w-2 bg-red-600 shadow-red-600 dark:bg-yellow-300 dark:shadow-yellow-600 shadow-lightning" />
+      <span className="rounded-full h-2 w-2 bg-red-600 shadow-red-600 dark:bg-yellow-300 dark:shadow-yellow-600 shadow-lightning" />
+      <span className="rounded-full h-2 w-2 bg-red-600 shadow-red-600 dark:bg-yellow-300 dark:shadow-yellow-600 shadow-lightning" />
     </button>
   );
 };

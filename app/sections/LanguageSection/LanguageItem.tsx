@@ -7,8 +7,8 @@ interface IProps extends React.HTMLAttributes<HTMLAreaElement> {
 
 export const LanguageItem: FC<IProps> = ({ className, data }) => {
   return (
-    <article className={cns(className, 'lh-2')}>
-      <h3 className="c-primary">{data?.name}</h3>
+    <article className={cns(className)}>
+      <h3 className="text-red-500 dark:text-yellow-400">{data?.name}</h3>
       <p>
         <span>{data?.level}</span>
       </p>

@@ -7,19 +7,19 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const DescriptionSection: FC<IProps> = ({ className }) => {
   return (
-    <div className={cns(className, 'h3')}>
-      <p className="lh-2">
+    <div className={cns(className, 'text-xl')}>
+      <p>
         <span>{t.description.part1}</span>
         <Space />
-        <span className="c-primary">{t.description.part2}</span>
+        <span className="text-red-500 dark:text-yellow-400">{t.description.part2}</span>
         <Space />
         <span>{t.description.part3}</span>
       </p>
 
-      <p className="lh-2 mt-20">
+      <p className="mt-6">
         <span>{t.description.part4}</span>
         <Space />
-        <span className="c-primary">{t.description.part5}</span>
+        <span className="text-red-500 dark:text-yellow-400">{t.description.part5}</span>
         <Space />
         <span>{t.description.part6}</span>
       </p>
