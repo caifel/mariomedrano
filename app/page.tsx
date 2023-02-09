@@ -1,4 +1,5 @@
-import { education, hobbies, languages, workingExperience } from './data';
+import React from 'react';
+
 import { DescriptionSection } from './sections/DescriptionSection';
 import { EducationSection } from './sections/EducationSection';
 import { ExperienceSection } from './sections/ExperienceSection';
@@ -7,6 +8,8 @@ import { HomeHeader } from './sections/HomeHeader';
 import { HobbySection } from './sections/HobbySection';
 import { LanguageSection } from './sections/LanguageSection';
 import { SkillSection } from './sections/SkillSection';
+
+import { education, hobbies, languages, workingExperience } from './data';
 
 const Page = () => {
   return (
