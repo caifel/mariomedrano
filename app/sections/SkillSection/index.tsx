@@ -1,34 +1,33 @@
 import { FC } from 'react';
+import Badge from '../../ui/Badge';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const SkillSection: FC<IProps> = () => {
+export const SkillSection: FC<IProps> = ({ className }) => {
   return (
-    <section className="card mt-1" id="skill-section">
+    <section className={className} id="skill-section">
       <h2>
         <a href="#skill-section">{'Skills'}</a>
       </h2>
-      <article className="mt-30">
+      <article className="mt-10">
         <h3>{'Top Match'}</h3>
-        <ul className="badge-container mt-20">
+        <div className="flex flex-wrap gap-x-4 gap-y-4 mt-6">
           {['React', 'Nextjs', 'Redux', 'Javascript', 'HTML', 'CSS', 'NodeJs', 'GIT', 'Jest', 'UX', 'Google'].map(
             (skill) => (
-              <li className="badge-primary" key={skill}>
-                {skill}
-              </li>
+              <Badge key={skill}>{skill}</Badge>
             )
           )}
-        </ul>
+        </div>
       </article>
-      <article className="mt-30">
+      <article className="mt-10">
         <h3>{'Complementary'}</h3>
-        <ul className="badge-container mt-20">
+        <div className="flex flex-wrap gap-x-4 gap-y-4 mt-6">
           {['React Native', 'Cypress', 'Nestjs', 'Docker', 'AWS', 'Jira'].map((skill) => (
-            <li className="badge" key={skill}>
+            <Badge color="secondary" key={skill}>
               {skill}
-            </li>
+            </Badge>
           ))}
-        </ul>
+        </div>
       </article>
     </section>
   );
