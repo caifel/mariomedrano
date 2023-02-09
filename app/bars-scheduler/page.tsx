@@ -66,8 +66,8 @@ const Page = () => {
                 key={index}
                 style={{
                   position: index > 0 ? `absolute` : `relative`,
-                  top: index > 0 && 0,
-                  left: index > 0 && 0
+                  top: (index > 0 && 0) || 0,
+                  left: (index > 0 && 0) || 0
                   // zIndex: 3
                 }}
                 data={[
