@@ -11,7 +11,7 @@ const RootLayout: FC<any> = ({ children }) => {
   return (
     <html className={roboto.className} lang="en" data-theme="dark">
       <head />
-      <body className="bg-zinc-900 dark:bg-yellow-900">
+      <body className="bg-black/90 dark:bg-black/80 transition-colors">
         <div className="max-w-xl my-0 mx-auto">{children}</div>
       </body>
     </html>

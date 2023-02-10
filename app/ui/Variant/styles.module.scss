@@ -26,7 +26,6 @@
 .variant > .amountOfUnit {
   @include amount-of-unit;
   @apply text-[#0c2638] font-normal;
-
 }
 .variant > .amountOfUnit.selected {
   @apply text-[#0c2638] font-semibold;
@@ -89,7 +88,5 @@
   @apply text-[#85939b] font-semibold;
 }
 .discountVariant > .discountIcon {
-  position: absolute;
-  top: -9px;
-  right: -9px;
+  @apply absolute top-[-9px] right-[-9px];
 }
