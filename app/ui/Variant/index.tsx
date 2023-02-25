@@ -1,8 +1,8 @@
 import cns from 'classnames';
 import styles from './styles.module.scss';
-import DiscountIcon from '../img/discount.svg';
+import DiscountIcon from './img/discount.svg';
 
-interface IVariantBuilder {
+interface BuilderProps {
   amount: string;
   unit: string;
   unitPrice: string;
@@ -12,12 +12,12 @@ interface IVariantBuilder {
   icon?: JSX.Element;
 }
 
-interface IVariantController {
+interface ControllerProps {
   isOutOfStock?: boolean;
   hasDiscount?: boolean;
 }
 
-const VariantBuilder = ({ amount, unit, unitPrice, isSelected, className, icon }: IVariantBuilder) => (
+const Builder = ({ amount, unit, unitPrice, isSelected, className, icon }: BuilderProps) => (
   <div className={cns(className, isSelected && styles.selected)}>
     {icon}
     <p className={cns(styles.amountOfUnit, isSelected && styles.selected)}>{`${amount} ${unit}`}</p>
@@ -29,18 +29,18 @@ export const Variant = ({
   isOutOfStock = false,
   hasDiscount = false,
   ...variantBuilderProps
-}: IVariantController & IVariantBuilder) => {
+}: ControllerProps & BuilderProps) => {
   if (isOutOfStock) {
-    return <VariantBuilder {...variantBuilderProps} className={styles.outOfStockVariant} />;
-  } else if (hasDiscount) {
+    return <Builder {...variantBuilderProps} className={styles.outOfStockVariant} />;
+  }
+  if (hasDiscount) {
     return (
-      <VariantBuilder
+      <Builder
         {...variantBuilderProps}
         className={styles.discountVariant}
         icon={<DiscountIcon className={styles.discountIcon} />}
       />
     );
-  } else {
-    return <VariantBuilder {...variantBuilderProps} className={styles.variant} />;
   }
+  return <Builder {...variantBuilderProps} className={styles.variant} />;
 };

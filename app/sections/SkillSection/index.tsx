@@ -7,16 +7,26 @@ export const SkillSection: FC<IProps> = ({ className }) => {
   return (
     <section className={className} id="skill-section">
       <h2>
-        <a href="#skill-section">{'Skills'}</a>
+        <a href="#skill-section">{'Main Skills'}</a>
       </h2>
       <article className="mt-10">
         <h3>{'Top Match'}</h3>
         <div className="flex flex-wrap gap-x-4 gap-y-4 mt-6">
-          {['React', 'Nextjs', 'Redux', 'Javascript', 'HTML', 'CSS', 'NodeJs', 'GIT', 'Jest', 'UX', 'Google'].map(
-            (skill) => (
-              <Badge key={skill}>{skill}</Badge>
-            )
-          )}
+          {[
+            'Typescript',
+            'React',
+            'Nextjs',
+            'Redux',
+            'HTML',
+            'CSS',
+            'NodeJs',
+            'GIT',
+            'Jest',
+            'UX',
+            'Googling'
+          ].map((skill) => (
+            <Badge key={skill}>{skill}</Badge>
+          ))}
         </div>
       </article>
       <article className="mt-10">

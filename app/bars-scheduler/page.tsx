@@ -180,7 +180,7 @@ const Page = () => {
               {
                 title: 'One',
                 value: tmpValue,
-                // redish color
+                // primary color
                 color: '#28A74530'
               },
               { title: 'Two', value: 100 - tmpValue, color: '#C13C3730' }

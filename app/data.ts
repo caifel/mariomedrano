@@ -7,9 +7,9 @@
 export const personalInfo = {
   name: 'Mario Medrano',
   alias: 'Caifel',
-  keywords: ['Software Engineer', 'Web Developer', 'Caifel', 'React', 'Next.js'],
+  keywords: ['Software Engineer', 'Web Developer', 'Caifel', 'React', 'Next.js', 'Frontend', 'Fullstack'],
   description:
-    'I’m a 30 year old engineer whose main passion is to acquire real knowledge to the point where initiative, creativity and intuition flow.',
+    'Software engineer specialized in web development with over 9 years of experience working in world wide projects, startups and own initiatives using cutting edge technologies while immersed in agile methodologies.',
   role: 'React / Next.js / MERN Stack',
   email: 'mario.medrano.maldonado@gmail.com'
 };
@@ -18,7 +18,7 @@ export const workingExperience: TWorkingExperience[] = [
   {
     current: true,
     company: 'MAYD',
-    role: 'Frontend',
+    role: 'Software Engineer',
     industry: 'E-commerce',
     url: 'https://www.getmayd.com/',
     displayTimePeriod: '2022 - Present'
@@ -28,14 +28,14 @@ export const workingExperience: TWorkingExperience[] = [
     role: 'Frontend',
     industry: 'Security Industry',
     url: 'https://www.paloaltonetworks.com/',
-    displayTimePeriod: '2020 - 2022'
+    displayTimePeriod: '2021 - 2022'
   },
   {
     company: 'Staywell',
     role: 'Fullstack',
     industry: 'Health care Industry',
     url: 'https://www.staywell.com/',
-    displayTimePeriod: '2019 - 2020'
+    displayTimePeriod: '2019 - 2021'
   },
   {
     company: 'Xtime',
