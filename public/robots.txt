@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://caifel.com/sitemap.xml
+Sitemap: http://caifel.com/en/sitemap.xml
+Sitemap: http://caifel.com/es/sitemap.xml
+Sitemap: http://caifel.com/de/sitemap.xml
