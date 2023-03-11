@@ -15,7 +15,7 @@ export const ExperienceSection = ({ workingExperience, className }: IProps) => {
     <section className={cns(className)} id="experience-section">
       <h2 className="flex items-center justify-between">
         <a href="#experience-section">{dictionary.section.workingExperience.title}</a>
-        <Link href={`${locale}/what-and-how`}>
+        <Link href={`/${locale}/what-and-how`}>
           <span className="link block">{dictionary.section.workingExperience.linkButton}</span>
         </Link>
       </h2>

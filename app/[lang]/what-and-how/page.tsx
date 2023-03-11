@@ -1,3 +1,4 @@
+import { i18n } from '@modules/i18n/i18n';
 import Link from 'next/link';
 import CheckMarkIcon from '../images/check-mark.svg';
 import HeaderBackIcon from '../images/header-back.svg';
@@ -5,10 +6,12 @@ import Badge from '../ui/Badge';
 import { Space } from '../ui/Space';
 
 const Page = () => {
+  const locale = i18n.getLocale();
+
   return (
     <main className="blog-page">
       <header className="h-24 relative flex items-center bg-white dark:bg-zinc-900">
-        <Link href="/" aria-label="back" className="absolute top-9 left-8 z-10">
+        <Link href={`/${locale}`} aria-label="back" className="absolute top-9 left-8 z-10">
           <HeaderBackIcon className="w-6 text-red-500 dark:text-yellow-400" />
         </Link>
         <h1 className="text-center flex-1">{'Why, What & how?'}</h1>
