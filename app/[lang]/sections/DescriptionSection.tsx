@@ -1,7 +1,7 @@
+import cns from 'classnames';
 import { FC } from 'react';
 import { t } from '../locales/en/all';
 import { Space } from '../ui/Space';
-import cns from 'classnames';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {}
 

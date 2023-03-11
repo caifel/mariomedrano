@@ -5,6 +5,7 @@ import { useBoolean, useEffectOnce, useInterval } from 'react-use';
 import { Button } from './Button';
 import { ButtonKit } from './Button/ButtonKit';
 import { electricity } from './canvas/electricity';
+import { CanvasPlayGround } from './CanvasPlayGround';
 import { OutlinePie } from './OutlinePie';
 import { VariantKit } from './Variant/VariantKit';
 
@@ -51,7 +52,7 @@ const formatTime = (time: number) => {
 
 const Page = () => {
   const referentTimeStamp = useRef(Date.now());
-  const totalSeconds = 10;
+  const totalSeconds = 200;
   const [passedSeconds, setPassedSeconds] = useState(0);
   const remainingSeconds = totalSeconds - passedSeconds;
   const [isRunning, toggleIsRunning] = useBoolean(true);
@@ -89,12 +90,12 @@ const Page = () => {
       <Button className="absolute top-0 left-0 z-20" onClick={electricity}>
         Init Electricity
       </Button>
-      <canvas
+      {/* <canvas
         id="myCanvas"
         width="500"
         height="500"
         className=" bg-zinc-900 shadow-lightning shadow-red-500 absolute top-0 left-0 z-10"
-      />
+      /> */}
 
       {/* <CanvasPlayGround /> */}
 
