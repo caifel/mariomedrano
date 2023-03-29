@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { MongoClient } from 'mongodb';
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.msvoy6e.mongodb.net/?retryWrites=true&w=majority`;
-const clientPromise = MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const clientPromise = MongoClient.connect(uri);
 
 async function saveData(title: string, description: string) {
   const client = await clientPromise;
