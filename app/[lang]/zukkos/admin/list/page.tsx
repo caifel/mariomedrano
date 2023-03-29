@@ -2,6 +2,7 @@ import { MongoClient } from 'mongodb';
 import Image from 'next/image';
 import Link from 'next/link';
 import DotsVerticalSvg from './img/dots-vertical.svg';
+import styles from './styles.module.scss';
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.msvoy6e.mongodb.net/?retryWrites=true&w=majority`;
 const clientPromise = MongoClient.connect(uri);
@@ -34,7 +35,7 @@ const IndexPage = async () => {
         </h1>
         {data.map((zukko, index) => (
           <div key={String(zukko._id)} className="w-full">
-            <Link href={`zukkos/admin/edit/${String(zukko._id)}`}>
+            <Link className={styles.linkImageContainer} href={`zukkos/admin/edit/${String(zukko._id)}`}>
               <Image
                 className="aspect-video"
                 alt="Picture of the story"
