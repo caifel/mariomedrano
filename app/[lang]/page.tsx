@@ -8,6 +8,7 @@ import { LanguageSection } from './sections/LanguageSection';
 import { SkillSection } from './sections/SkillSection';
 
 import { education, hobbies, languages, workingExperience } from './data';
+import { ImageSample } from './ImageSample';
 
 const getData = async () => {
   return new Response(
@@ -26,6 +27,7 @@ const IndexPage = async () => {
   return (
     <>
       {/* <ButtonHandler /> */}
+      <ImageSample />
       <HomeHeader className="card" />
       <main>
         <DescriptionSection className="card" />

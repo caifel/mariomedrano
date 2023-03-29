@@ -30,5 +30,15 @@
     "part1": "The best vibes to you!",
     "part2": "Thanks for reading me",
     "part3": "See ya soon!"
+  },
+
+  "ui": {
+    "imageField": {
+      "changeImage": "Change image",
+      "pickImage": "Pick image",
+      "sizeLimit": "Image size limit is 5MB",
+      "cancel": "Cancel",
+      "save": "Save"
+    }
   }
 }

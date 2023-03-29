@@ -3,7 +3,7 @@
 import cns from 'classnames';
 import React, { FC, useEffect, useRef } from 'react';
 import { useEffectOnce } from 'react-use';
-import useTabVisibility from '../utils/useTabVisibility';
+import useTabVisibility from './utils/useTabVisibility';
 
 type BuilderProps = {
   arcSize?: number;

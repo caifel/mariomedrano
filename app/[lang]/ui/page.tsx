@@ -5,7 +5,6 @@ import { useBoolean, useEffectOnce, useInterval } from 'react-use';
 import { Button } from './Button';
 import { ButtonKit } from './Button/ButtonKit';
 import { electricity } from './canvas/electricity';
-import { CanvasPlayGround } from './CanvasPlayGround';
 import { OutlinePie } from './OutlinePie';
 import { VariantKit } from './Variant/VariantKit';
 

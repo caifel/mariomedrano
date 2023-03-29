@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  label {
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid;
+    // border-radius: 19px;
+    // color: $light-color;
+    display: flex;
+    font-size: 18px;
+    height: 38px;
+    // width: 38px;
+    margin: 0;
+    input {
+      width: 1px;
+      height: 1px;
+      position: absolute;
+      bottom: -1px;
+      right: 0px;
+    }
+  }
+  button img {
+    border-radius: 38px;
+  }
+}
+.crop-container {
+  height: 350px;
+  position: relative;
+}

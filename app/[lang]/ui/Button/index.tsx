@@ -47,6 +47,7 @@ const Builder: FC<BuilderProps<ElementType>> = ({
 
 type ButtonProps = Omit<BuilderProps<'button'>, 'as'>;
 type LinkButtonProps = Omit<BuilderProps<'a'>, 'as'>;
+type DivButtonProps = Omit<BuilderProps<'div'>, 'as'>;
 
 export const Button: FC<ButtonProps> = (props) => {
   if (props.variant === 'clean') {
@@ -62,3 +63,4 @@ export const Button: FC<ButtonProps> = (props) => {
 export const LinkButton: FC<LinkButtonProps> = (props) => (
   <Builder target="_blank" rel="noopener noreferrer" as="a" {...props} />
 );
+export const DivButton: FC<LinkButtonProps> = (props) => <Builder as="div" {...props} />;

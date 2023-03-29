@@ -6,16 +6,18 @@ import { NextResponse } from 'next/server';
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
-  // // If you have one
+  // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
+  // If you have one
+  console.log(pathname, 'pathname');
   if (
     [
+      '/images',
       '/sitemap.xml',
       '/robots.txt'
       // '/manifest.json',
       // '/favicon.ico',
       // Your other files in `public`
-    ].includes(pathname)
+    ].findIndex((path) => pathname.includes(path)) !== -1
   ) {
     return;
   }
