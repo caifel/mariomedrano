@@ -37,7 +37,7 @@ const IndexPage = async ({ params }: any) => {
             <CloseSvg className="group-focus:text-white/80 w-10 h-10 text-white/50" />
           </Link>
         </h1>
-        <Form title={data?.title} imgUrl={getUrl(params.id, 500)} />
+        <Form title={data?.title} imgUrl={getUrl(params.id, 500)} id={params.id} />
       </main>
     </>
   );

@@ -9,8 +9,17 @@ const nextConfig = {
   experimental: {
     appDir: true
   },
+
   images: {
-    domains: ['https://zukkos.s3.sa-east-1.amazonaws.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 's3.amazonaws.com',
+        port: '',
+        pathname: '/zukkos/**'
+      }
+    ],
+    // domains: ['https://zukkos.s3.sa-east-1.amazonaws.com']
   },
   webpack: (config) => {
     config.module.rules.push({

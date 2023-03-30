@@ -1,26 +1,26 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 import { NextResponse } from 'next/server';
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.msvoy6e.mongodb.net/?retryWrites=true&w=majority`;
 const clientPromise = MongoClient.connect(uri);
 
-async function saveData(title: string) {
+async function updateData(id: string, title: string) {
   const client = await clientPromise;
   const db = client.db('main');
   const collection = db.collection('zukko');
 
-  return collection.insertOne({ title });
+  return collection.updateOne({ _id: new ObjectId(id) }, { $set: { title } });
 }
 
-export async function POST(request: Request) {
-  const { title } = await request.json();
+export async function PUT(request: Request) {
+  const { id, title } = await request.json();
 
   try {
-    const result = await saveData(title);
+    const result = await updateData(id, title);
 
-    return NextResponse.json({
-      id: result.insertedId
-    });
+    console.log(id + ' ' + title);
+
+    return NextResponse.json(result);
   } catch (error) {
     console.error(error);
     return new NextResponse('Error', { status: 500 });

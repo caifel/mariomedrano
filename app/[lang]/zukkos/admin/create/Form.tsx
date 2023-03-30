@@ -1,35 +1,37 @@
 'use client';
 
+import { ResizableTextareaController } from '@ui/Form/ResizableTextarea';
 import cns from 'classnames';
 import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 import { Area } from 'react-easy-crop';
-import { FormProvider, useForm } from 'react-hook-form';
-import { FormCard } from './FormCard';
-import PlusSvg from './img/plus.svg';
+import { useForm } from 'react-hook-form';
+import { ImageCropper } from './ImageCropper';
 import CloseSvg from './img/close.svg';
+import PlusSvg from './img/plus.svg';
 import { useSave } from './useSave';
 import { readDataUrl } from './utils';
-import { ImageCropper } from './ImageCropper';
-import { ResizableTextareaController } from '@ui/Form/ResizableTextarea';
 
 type Props = {
+  id?: string;
   title?: string;
   imgUrl?: string;
 };
 
-export const Form = ({ title, imgUrl }: Props) => {
+export const Form = ({ title, imgUrl, id }: Props) => {
   const { onSubmit } = useSave();
+  const isCreate = !id;
   const { register, handleSubmit, formState, setValue, watch, control } = useForm({
     defaultValues: {
+      id,
       image: null,
       imageCropArea: {},
-      title: title || 'War is the building block of economy',
+      title: title || '',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     }
   });
-  const { isValid, isSubmitting } = formState;
+  const { isValid, isSubmitting, isDirty } = formState;
 
   const [imgData, setImgData] = useState<any>();
   const handleFocus = (event: any) => event.target.select();
@@ -67,13 +69,14 @@ export const Form = ({ title, imgUrl }: Props) => {
           <label className="relative">
             <input
               {...register('image', {
-                required: true
+                required: isCreate
               })}
               type="file"
               accept="image/png, image/jpeg, image/webp, image/gif"
               className="absolute w-px h-px opacity-0"
             />
             <Image
+              className="cursor-pointer"
               alt="Image placeholder"
               width={1600}
               height={900}
@@ -103,12 +106,6 @@ export const Form = ({ title, imgUrl }: Props) => {
               required
               className="overflow-hidden w-full resize-none bg-transparent outline-none border-none text-xl font-semibold"
             />
-            {/* <h2 className="text-xl font-semibold">{'War is the building block of economy'}</h2> */}
-            {/* <p className="mt-3">
-            {
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-            }
-          </p> */}
             <ResizableTextareaController
               name="description"
               control={control}
@@ -143,15 +140,17 @@ export const Form = ({ title, imgUrl }: Props) => {
       </div>
 
       <button
-        disabled={!isValid || isSubmitting}
+        disabled={!isValid || isSubmitting || !isDirty}
         className={cns(
-          'focus:bg-blue-800 outline-none absolute bottom-0 left-0 right-0 rounded-none bg-blue-900 h-14 select-none transition-colors duration-300',
+          'outline-none max-w-xl mx-auto fixed bottom-0 left-0 right-0 rounded-none h-16 select-none transition-colors duration-300',
           {
-            'opacity-50': !isValid || isSubmitting
+            'focus:bg-blue-800 bg-blue-900': isCreate,
+            'focus:bg-green-700 bg-green-800': !isCreate,
+            'opacity-50': !isValid || isSubmitting || !isDirty
           }
         )}
       >
-        <span className="text-xl font-semibold tracking-widest">{'CREATE'}</span>
+        <span className="text-2xl font-semibold tracking-widest">{isCreate ? 'CREATE' : 'SAVE'}</span>
       </button>
     </form>
   );

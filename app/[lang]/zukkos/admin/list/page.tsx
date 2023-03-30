@@ -2,12 +2,13 @@ import { MongoClient } from 'mongodb';
 import Image from 'next/image';
 import Link from 'next/link';
 import DotsVerticalSvg from './img/dots-vertical.svg';
+import PlusSvg from './img/plus.svg';
 import styles from './styles.module.scss';
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.msvoy6e.mongodb.net/?retryWrites=true&w=majority`;
 const clientPromise = MongoClient.connect(uri);
 
-export const revalidate = 3600; // revalidate every hour
+// export const revalidate = 3600; // revalidate every hour
 
 const getData = async () => {
   const client = await clientPromise;
@@ -29,21 +30,35 @@ const IndexPage = async () => {
 
   return (
     <>
-      <main className="bg-zinc-900 h-full min-h-screen pt-10 pb-20 relative">
-        <h1 className="select-none mb-10 ml-10 mr-5 font-semibold relative">
-          <span>{'<Add header>'}</span>
-        </h1>
+      <main className="bg-zinc-900 h-full min-h-screen pt-5 pb-20 relative">
+        <div className="flex items-center px-5">
+          <div className="w-2 h-2 bg-orange-500" />
+          <div className="w-3 h-3 bg-orange-400 ml-1" />
+          <div className="w-2 h-2 bg-orange-300 ml-1" />
+          <h1 className="ml-2 select-none font-semibold text-xl tracking-tighter">{'Zukkos'}</h1>
+          <Image
+            className="rounded-full flex-shrink-0 ml-auto"
+            alt="Picture of the author"
+            width={24}
+            height={24}
+            src="/images/wolf.webp"
+            unoptimized
+            priority
+          />
+        </div>
         {data.map((zukko, index) => (
-          <div key={String(zukko._id)} className="w-full">
+          <div key={String(zukko._id)} className="w-full mt-5">
             <Link className={styles.linkImageContainer} href={`zukkos/admin/edit/${String(zukko._id)}`}>
               <Image
-                className="aspect-video"
+                className="aspect-video active:opacity-80 opacity-100 transition-opacity duration-300"
                 alt="Picture of the story"
                 width={1600}
                 height={900}
                 placeholder="blur"
                 src={getUrl(String(zukko._id), 500)}
-                blurDataURL={getUrl(String(zukko._id), 4)}
+                blurDataURL={
+                  'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcufOEMQAG3AJv8A9RJQAAAABJRU5ErkJggg=='
+                }
                 unoptimized
                 priority={index < 3}
               />
@@ -71,6 +86,11 @@ const IndexPage = async () => {
             </div>
           </div>
         ))}
+        <div className="flex justify-center max-w-xl mx-auto fixed bottom-0 left-0 right-0 py-5 bg-black">
+          <Link href="zukkos/admin/create">
+            <PlusSvg className="text-gray-200 w-9 border border-gray-200 p-1.5 rounded-full" />
+          </Link>
+        </div>
       </main>
     </>
   );
