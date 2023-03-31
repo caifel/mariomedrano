@@ -87,16 +87,17 @@ export const Form = ({ title, imgUrl, id }: Props) => {
           </label>
         )}
 
-        <div className="flex items-start pl-5 pr-20 py-5">
+        <div className="flex items-start pl-2 mt-4 pb-2">
           <Image
             className="rounded-full flex-shrink-0"
-            alt="User Thumbnail"
-            width={40}
-            height={40}
+            alt="Picture of the author"
+            width={35}
+            height={35}
             src="/images/wolf.webp"
             unoptimized
             priority
           />
+
           <div className="ml-6">
             <ResizableTextareaController
               name="title"
@@ -112,7 +113,7 @@ export const Form = ({ title, imgUrl, id }: Props) => {
               onFocus={handleFocus}
               placeholder="Once upon a time..."
               required
-              className="overflow-hidden w-full resize-none bg-transparent outline-none border-none mt-3"
+              className="overflow-hidden w-full resize-none bg-transparent outline-none border-none mt-1"
             />
           </div>
         </div>
@@ -144,8 +145,8 @@ export const Form = ({ title, imgUrl, id }: Props) => {
         className={cns(
           'outline-none max-w-xl mx-auto fixed bottom-0 left-0 right-0 rounded-none h-16 select-none transition-colors duration-300',
           {
-            'focus:bg-blue-800 bg-blue-900': isCreate,
-            'focus:bg-green-700 bg-green-800': !isCreate,
+            'focus:bg-blue-800 bg-blue-900': true,
+            // 'focus:bg-green-700 bg-green-800': true,
             'opacity-50': !isValid || isSubmitting || !isDirty
           }
         )}

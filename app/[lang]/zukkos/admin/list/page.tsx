@@ -10,6 +10,8 @@ const clientPromise = MongoClient.connect(uri);
 
 // export const revalidate = 3600; // revalidate every hour
 
+// TODO: Use fetch to consume API, this is not optimized neither cached
+
 const getData = async () => {
   const client = await clientPromise;
   const db = client.db('main');
@@ -64,12 +66,12 @@ const IndexPage = async () => {
               />
             </Link>
 
-            <div className="flex items-start pl-5 py-5 relative">
+            <div className="flex items-start pl-2 mt-4 pb-2 relative">
               <Image
                 className="rounded-full flex-shrink-0"
                 alt="Picture of the author"
-                width={40}
-                height={40}
+                width={35}
+                height={35}
                 src="/images/wolf.webp"
                 unoptimized
               />
@@ -77,16 +79,16 @@ const IndexPage = async () => {
                 <Link href={`zukkos/admin/edit/${String(zukko._id)}`}>
                   <h2 className="text-xl font-semibold">{zukko.title}</h2>
                 </Link>
-                <p className="mt-3">{'5 chapters, modality of the game'}</p>
+                <p className="mt-1">{'5 chapters, modality of the game'}</p>
               </div>
 
-              <button className="absolute top-5 right-2">
-                <DotsVerticalSvg className="text-gray-500 w-10" />
+              <button className="absolute top-3 right-2">
+                <DotsVerticalSvg className="text-gray-400 w-8" />
               </button>
             </div>
           </div>
         ))}
-        <div className="flex justify-center max-w-xl mx-auto fixed bottom-0 left-0 right-0 py-5 bg-black">
+        <div className="flex justify-center items-center max-w-xl mx-auto fixed bottom-0 left-0 right-0 h-16 bg-zinc-900 border-t border-t-zinc-700 ">
           <Link href="zukkos/admin/create">
             <PlusSvg className="text-gray-200 w-9 border border-gray-200 p-1.5 rounded-full" />
           </Link>
