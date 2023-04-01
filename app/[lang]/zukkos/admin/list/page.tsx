@@ -1,5 +1,4 @@
 import cns from 'classnames';
-import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getImageUrl } from '../../utils/getImageUrl';
@@ -15,11 +14,11 @@ type Story = {
 
 const getList = async () => {
   // const response = await fetch('http://localhost:3000/en/zukkos/admin/list/api');
-  const HOST = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://caifel.com';
-  const response = await fetch(`${HOST}/api/zukkos/list`);
-  const { list = [] } = await response.json();
+  // const HOST = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://caifel.com';
+  // const response = await fetch(`${HOST}/api/zukkos/list`);
+  // const { list = [] } = await response.json();
 
-  return list.map(({ _id, title }: any) => ({
+  return [].map(({ _id, title }: any) => ({
     id: String(_id),
     title,
     image: getImageUrl(String(_id), 500)
