@@ -8,7 +8,6 @@ export function middleware(request: NextRequest) {
 
   // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
   // If you have one
-  console.log(pathname, 'pathname');
   if (
     [
       '/images',

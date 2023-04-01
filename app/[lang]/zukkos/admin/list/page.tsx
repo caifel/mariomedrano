@@ -1,32 +1,27 @@
-import { MongoClient } from 'mongodb';
+import cns from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getImageUrl } from '../../utils/getImageUrl';
 import DotsVerticalSvg from './img/dots-vertical.svg';
 import PlusSvg from './img/plus.svg';
 import styles from './styles.module.scss';
-import cns from 'classnames';
-import Badge from '@ui/Badge';
 
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.msvoy6e.mongodb.net/?retryWrites=true&w=majority`;
-const clientPromise = MongoClient.connect(uri);
-
-// export const revalidate = 3600; // revalidate every hour
-
-// TODO: Use fetch to consume API, this is not optimized neither cached
-
-const getData = async () => {
-  const client = await clientPromise;
-  const db = client.db('main');
-  const collection = db.collection('zukko');
-  // Sorting by _id is same as sorting by date
-  const data = await collection.find().limit(5).sort({ _id: -1 }).toArray();
-
-  return data;
+type Story = {
+  id: string;
+  title: string;
+  image: string;
 };
 
-const getUrl = (id: string, size: 4 | 500) => {
-  const key = `${id}x${size}.webp`;
-  return `${process.env.S3_HOST}/${key}`;
+const getList = async () => {
+  const response = await fetch('http://localhost:3000/en/zukkos/admin/list/api');
+  // const response = await fetch('http://localhost:3000/api/zukkos/list');
+  const { list = [] } = await response.json();
+
+  return list.map(({ _id, title }: any) => ({
+    id: String(_id),
+    title,
+    image: getImageUrl(String(_id), 500)
+  })) as Story[];
 };
 
 const Header = () => {
@@ -51,60 +46,56 @@ const Header = () => {
   );
 };
 const Body = async () => {
-  const data = await getData();
+  const data = await getList();
 
   return (
     <>
-      {data.map(({ _id, title }, index) => {
-        const id = String(_id);
+      {data.map(({ id, title, image }, index) => (
+        <div key={id} className="w-full mt-5">
+          <Link className={cns(styles.linkImageContainer, 'relative')} href={`zukkos/admin/edit/${id}`}>
+            <Image
+              className="aspect-video active:opacity-80 opacity-100 transition-opacity duration-300"
+              alt="Picture of the story"
+              width={1600}
+              height={900}
+              placeholder="blur"
+              src={image}
+              blurDataURL={
+                'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcufOEMQAG3AJv8A9RJQAAAABJRU5ErkJggg=='
+              }
+              unoptimized
+              priority={index < 3}
+            />
+            <span className="absolute bottom-2 right-2 bg-black text-white rounded-md select-none cursor-pointer text- text-xs px-2 py-1.5">
+              {'0 / 0'}
+            </span>
+          </Link>
 
-        return (
-          <div key={id} className="w-full mt-5">
-            <Link className={cns(styles.linkImageContainer, 'relative')} href={`zukkos/admin/edit/${id}`}>
-              <Image
-                className="aspect-video active:opacity-80 opacity-100 transition-opacity duration-300"
-                alt="Picture of the story"
-                width={1600}
-                height={900}
-                placeholder="blur"
-                src={getUrl(id, 500)}
-                blurDataURL={
-                  'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcufOEMQAG3AJv8A9RJQAAAABJRU5ErkJggg=='
-                }
-                unoptimized
-                priority={index < 3}
-              />
-              <span className="absolute bottom-2 right-2 bg-black text-white rounded-md select-none cursor-pointer text- text-xs px-2 py-1.5">
-                {'0 / 0'}
-              </span>
-            </Link>
-
-            <div className="flex items-start pl-2 mt-4 pb-2 relative">
-              <Image
-                className="rounded-full flex-shrink-0"
-                alt="Picture of the author"
-                width={35}
-                height={35}
-                src="/images/wolf.webp"
-                unoptimized
-              />
-              <div className="ml-6 pr-10 flex-1">
-                <Link href={`zukkos/admin/edit/${id}`}>
-                  <h2 className="text-xl font-semibold">{title}</h2>
-                </Link>
-                <p className="mt-1">
-                  <a className="underline cursor-default">{'Wolves'}</a>
-                  <span>{' - decision maker | random'}</span>
-                </p>
-              </div>
-
-              <button className="absolute top-3 right-2">
-                <DotsVerticalSvg className="text-gray-400 w-8" />
-              </button>
+          <div className="flex items-start pl-2 mt-4 pb-2 relative">
+            <Image
+              className="rounded-full flex-shrink-0"
+              alt="Picture of the author"
+              width={35}
+              height={35}
+              src="/images/wolf.webp"
+              unoptimized
+            />
+            <div className="ml-6 pr-10 flex-1">
+              <Link href={`zukkos/admin/edit/${id}`}>
+                <h2 className="text-xl font-semibold">{title}</h2>
+              </Link>
+              <p className="mt-1">
+                <a className="underline cursor-default">{'Wolves'}</a>
+                <span>{' - decision maker | random'}</span>
+              </p>
             </div>
+
+            <button className="absolute top-3 right-2">
+              <DotsVerticalSvg className="text-gray-400 w-8" />
+            </button>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </>
   );
 };
@@ -121,12 +112,10 @@ const Footer = () => {
 const IndexPage = async () => {
   return (
     <>
-      <main className="bg-zinc-900 max-w-xl h-full min-h-screen pt-5 pb-20 relative">
-        <Header />
-        {/* @ts-expect-error Async Server Component */}
-        <Body />
-        <Footer />
-      </main>
+      <Header />
+      {/* @ts-expect-error Async Server Component */}
+      <Body />
+      <Footer />
     </>
   );
 };

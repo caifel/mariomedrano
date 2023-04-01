@@ -2,7 +2,6 @@ import nextConnect from 'next-connect';
 import upload from 'server/multer';
 import { uploadToS3 } from 'server/s3';
 import sharp from 'sharp';
-import { serialize } from 'v8';
 
 const handler = nextConnect();
 
