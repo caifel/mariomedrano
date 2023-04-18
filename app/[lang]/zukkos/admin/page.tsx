@@ -1,11 +1,8 @@
-import FileUploadForm from './FileUploadForm';
-
 const IndexPage = async () => {
   return (
     <>
       <main>
-        <h1>Image Upload</h1>
-        <FileUploadForm />
+        <h1>Login</h1>
       </main>
     </>
   );

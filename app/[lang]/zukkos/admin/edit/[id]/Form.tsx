@@ -2,35 +2,44 @@
 
 import { ResizableTextareaController } from '@ui/Form/ResizableTextarea';
 import { ImageCropper } from '@ui/ImageCropper';
+import { readDataUrl } from 'app/[lang]/zukkos/utils/readDataUrl';
 import cns from 'classnames';
 import Image from 'next/image';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Area } from 'react-easy-crop';
 import { useForm } from 'react-hook-form';
-import { readDataUrl } from '../../utils/readDataUrl';
 import CloseSvg from './img/close.svg';
 import PlusSvg from './img/plus.svg';
-import { useCreate } from './useCreate';
+import { useEdit } from './useEdit';
 
-export const Form = () => {
-  const { onSubmit } = useCreate();
+type Props = {
+  id?: string;
+  title?: string;
+  imgUrl?: string;
+};
+
+export const Form = ({ title, imgUrl, id }: Props) => {
+  const { onSubmit } = useEdit();
   const { register, handleSubmit, formState, setValue, watch, control } = useForm({
     defaultValues: {
+      id,
+      title,
       image: null,
       imageCropArea: {},
-      title: '',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     }
   });
-  const { isValid, isSubmitting, isDirty } = formState;
+  const { isValid, isSubmitting, isDirty, errors } = formState;
+  const isDisabled = !isValid || isSubmitting || !isDirty;
+
+  console.log(errors);
 
   const [imgData, setImgData] = useState<any>();
   const handleFocus = (event: any) => event.target.select();
-  // const { title } = getValues();
-  const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
+  const onCropComplete = (croppedArea: Area, croppedAreaPixels: Area) => {
     setValue('imageCropArea', croppedAreaPixels);
-  }, []);
+  };
 
   const image = watch('image');
 
@@ -60,9 +69,7 @@ export const Form = () => {
         ) : (
           <label className="relative">
             <input
-              {...register('image', {
-                required: true
-              })}
+              {...register('image')}
               type="file"
               accept="image/png, image/jpeg, image/webp, image/gif"
               className="absolute w-px h-px opacity-0"
@@ -72,7 +79,7 @@ export const Form = () => {
               alt="Image placeholder"
               width={1600}
               height={900}
-              src={'/images/16-9.webp'}
+              src={imgUrl || '/images/16-9.webp'}
               unoptimized
               priority
             />
@@ -133,17 +140,17 @@ export const Form = () => {
       </div>
 
       <button
-        disabled={!isValid || isSubmitting || !isDirty}
+        disabled={isDisabled}
         className={cns(
           'outline-none max-w-xl mx-auto fixed bottom-0 left-0 right-0 rounded-none h-16 select-none transition-colors duration-300',
           {
             'focus:bg-blue-800 bg-blue-900': true,
             // 'focus:bg-green-700 bg-green-800': true,
-            'opacity-50': !isValid || isSubmitting || !isDirty
+            'opacity-50': isDisabled
           }
         )}
       >
-        <span className="text-2xl font-semibold tracking-widest">{'CREATE'}</span>
+        <span className="text-2xl font-semibold tracking-widest">{'SAVE'}</span>
       </button>
     </form>
   );

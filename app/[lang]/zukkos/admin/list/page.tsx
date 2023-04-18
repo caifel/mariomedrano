@@ -15,7 +15,9 @@ type Story = {
 const getList = async () => {
   // const response = await fetch('http://localhost:3000/en/zukkos/admin/list/api');
   const HOST = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://caifel.com';
-  const response = await fetch(`${HOST}/api/zukkos/list`);
+  const response = await fetch(`${HOST}/api/zukkos/list`, {
+    cache: 'no-store'
+  });
   const { list = [] } = await response.json();
 
   return list.map(({ _id, title }: any) => ({

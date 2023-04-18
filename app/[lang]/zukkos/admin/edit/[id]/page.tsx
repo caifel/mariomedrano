@@ -1,12 +1,11 @@
+import { getImageUrl } from 'app/[lang]/zukkos/utils/getImageUrl';
 import { MongoClient, ObjectId } from 'mongodb';
 import Link from 'next/link';
-import { Form } from '../../create/Form';
 import CloseSvg from '../../create/img/close.svg';
+import { Form } from './Form';
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.msvoy6e.mongodb.net/?retryWrites=true&w=majority`;
 const clientPromise = MongoClient.connect(uri);
-
-export const revalidate = 3600; // revalidate every hour
 
 const getData = async (id: string) => {
   const client = await clientPromise;
@@ -18,15 +17,8 @@ const getData = async (id: string) => {
   return data;
 };
 
-const getUrl = (id: string, size: 4 | 500) => {
-  const key = `${id}x${size}.webp`;
-  return `${process.env.S3_HOST}/${key}`;
-};
-
 const IndexPage = async ({ params }: any) => {
   const data = await getData(params.id);
-
-  // console.log(data, 'data');
 
   return (
     <>
@@ -37,7 +29,8 @@ const IndexPage = async ({ params }: any) => {
             <CloseSvg className="group-focus:text-white/80 w-10 h-10 text-white/50" />
           </Link>
         </h1>
-        <Form title={data?.title} imgUrl={getUrl(params.id, 500)} id={params.id} />
+
+        <Form title={data?.title} imgUrl={getImageUrl(params.id, 500)} id={params.id} />
       </main>
     </>
   );

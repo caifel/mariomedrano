@@ -27,7 +27,7 @@ const IndexPage = async () => {
   return (
     <>
       {/* <ButtonHandler /> */}
-      <ImageSample />
+      {/* <ImageSample /> */}
       <HomeHeader className="card" />
       <main>
         <DescriptionSection className="card" />
