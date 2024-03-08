@@ -44,7 +44,7 @@ function getDirection(distance: Coordinates): Direction {
 }
 function getThreshold(direction: Direction, overralDistance: number) {
   const isTouchDevice = isClient && 'ontouchstart' in document.documentElement;
-  const threshold = 500; // config
+  const threshold = 200; // config
   const thresholdFactor = isTouchDevice ? 1 : 1.5; // config
   const extraThreshold = Math.abs(overralDistance);
   const extraThresholdFactor = 5; // config

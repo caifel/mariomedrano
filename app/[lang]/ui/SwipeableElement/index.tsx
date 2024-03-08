@@ -2,7 +2,7 @@ import { Direction, useSwipe } from '@ui/utils/useSwipe';
 import React, { FC, useRef } from 'react';
 
 type OwnProps = {
-  src: string;
+  // src: string;
   onDismiss: any;
   onDirectionChange?: (direction: Direction) => void;
 };
@@ -12,15 +12,15 @@ const Builder: FC<OwnProps & React.HTMLAttributes<HTMLDivElement>> = ({
   onDismiss,
   onDirectionChange,
   className,
-  src,
+  // src,
   ...others
 }) => {
   const ref = useRef<HTMLImageElement>(null);
-  const events = useSwipe({ ref, onDismiss, onDirectionChange });
+  const swipeEvents = useSwipe({ ref, onDismiss, onDirectionChange });
 
   return (
-    <div ref={ref} {...events} {...others} className={className}>
-      <img src={src} />
+    <div ref={ref} {...swipeEvents} {...others} className={className}>
+      {children}
     </div>
     //   {children}
     // </img>

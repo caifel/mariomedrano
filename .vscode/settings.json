@@ -5,4 +5,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.tabSize": 2,
+  "prettier.configPath": ".prettierrc.json",
+  "editor.minimap.maxColumn": 50,
 }
