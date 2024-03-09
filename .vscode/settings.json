@@ -7,4 +7,7 @@
   "editor.tabSize": 2,
   "prettier.configPath": ".prettierrc.json",
   "editor.minimap.maxColumn": 50,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
 }
