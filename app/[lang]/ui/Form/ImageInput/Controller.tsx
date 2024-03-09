@@ -26,7 +26,7 @@ export default React.forwardRef<HTMLInputElement, ControllerProps>(
 
     return (
       <Controller
-        name={name!}
+        name={name as string}
         control={control}
         render={render}
         rules={{

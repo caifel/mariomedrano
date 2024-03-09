@@ -120,7 +120,7 @@ const Footer = () => {
   );
 };
 
-const IndexPage = async () => {
+const IndexPage = () => {
   return (
     <>
       <Header />

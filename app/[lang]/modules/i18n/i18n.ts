@@ -1,3 +1,4 @@
+import { t } from 'app/[lang]/locales/en/all';
 import { Locale } from './config';
 import { dictionaries } from './dictionaries';
 
@@ -16,6 +17,7 @@ class I18n {
     this.dictionary = await dictionaries[this.locale]();
   }
   getDictionary() {
+    // eslint-disable-next-line
     return this.dictionary!;
   }
 }

@@ -79,7 +79,7 @@ const Page = () => {
   //   }
   // }, [isRunning]);
 
-  useEffectOnce(() => {});
+  // useEffectOnce(() => {});
 
   return (
     <main className="p-5 bg-white text-zinc-800">

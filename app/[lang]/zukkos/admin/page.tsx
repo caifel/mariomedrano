@@ -1,4 +1,4 @@
-const IndexPage = async () => {
+const IndexPage = () => {
   return (
     <>
       <main>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Form } from './Form';
 import CloseSvg from './img/close.svg';
 
-const IndexPage = async () => {
+const IndexPage = () => {
   return (
     <>
       <main className="bg-zinc-900 h-full min-h-screen pt-10 pb-20 relative">

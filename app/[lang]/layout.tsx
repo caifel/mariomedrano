@@ -1,11 +1,11 @@
 import { Roboto } from 'next/font/google';
 import { i18nConfig, Locale } from '@modules/i18n/config';
 import { i18n } from '@modules/i18n/i18n';
-import type { Metadata } from 'next';
 import '../../styles/index.scss';
 import { personalInfo } from './data';
+import type { Metadata } from 'next';
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ lang: locale }));
 }
 
