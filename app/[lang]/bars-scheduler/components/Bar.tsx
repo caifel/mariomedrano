@@ -1,16 +1,26 @@
 'use client';
 
-import { BAR_AND_LABEL_HEIGHT, ColorType, PROPORTION_MULTIPLIER } from '../constants';
+import {
+  BAR_AND_LABEL_HEIGHT,
+  ColorType,
+  PROPORTION_MULTIPLIER,
+} from '../constants';
 import { getColor } from '../utils';
 
-export const Bar = ({ percent, size, name, className, style }: TTask & React.HTMLAttributes<HTMLDivElement>) => {
+export const Bar = ({
+  percent,
+  size,
+  name,
+  className,
+  style,
+}: TTask & React.HTMLAttributes<HTMLDivElement>) => {
   const color = getColor(percent);
 
   return (
     <div
       style={{
         ...style,
-        height: BAR_AND_LABEL_HEIGHT
+        height: BAR_AND_LABEL_HEIGHT,
       }}
     >
       <p
@@ -18,7 +28,7 @@ export const Bar = ({ percent, size, name, className, style }: TTask & React.HTM
           fontSize: 9,
           color: 'lightgray',
           letterSpacing: 1,
-          textShadow: `${color} 0px 0px 15px`
+          textShadow: `${color} 0px 0px 15px`,
         }}
       >
         {name}
@@ -29,7 +39,7 @@ export const Bar = ({ percent, size, name, className, style }: TTask & React.HTM
           transform: 'rotate(180deg)',
           width: size * PROPORTION_MULTIPLIER,
           height: BAR_AND_LABEL_HEIGHT * 0.35,
-          backgroundColor: color
+          backgroundColor: color,
         }}
         className={className}
       >
@@ -37,7 +47,7 @@ export const Bar = ({ percent, size, name, className, style }: TTask & React.HTM
           style={{
             width: `${100 - percent}%`,
             height: '100%',
-            backgroundColor: ColorType.disabled
+            backgroundColor: ColorType.disabled,
           }}
         />
       </div>

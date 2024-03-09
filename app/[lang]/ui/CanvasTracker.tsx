@@ -3,10 +3,10 @@
 import React, { FC, useEffect } from 'react';
 
 function getMousePos(canvas: any, evt: any) {
-  var rect = canvas.getBoundingClientRect();
+  const rect = canvas.getBoundingClientRect();
   return {
     x: evt.clientX - rect.left,
-    y: evt.clientY - rect.top
+    y: evt.clientY - rect.top,
   };
 }
 
@@ -34,7 +34,7 @@ export const CanvasTracker: FC = () => {
         left: 0,
         zIndex: 1,
         width: '100%',
-        height: '100%'
+        height: '100%',
       }}
     />
   );

@@ -1,5 +1,5 @@
-import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 
 export const useCreate = () => {
   const { push } = useRouter();
@@ -11,11 +11,11 @@ export const useCreate = () => {
       let response = await fetch(url, {
         method: 'POST',
         body: JSON.stringify({
-          title: data.title
+          title: data.title,
         }),
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       });
       const entity: { id: string } = await response.json();
 
@@ -29,7 +29,7 @@ export const useCreate = () => {
 
         response = await fetch('/api/zukkos/upload', {
           method: 'POST',
-          body: formData
+          body: formData,
         });
       }
 

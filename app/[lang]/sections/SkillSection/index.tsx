@@ -23,7 +23,7 @@ export const SkillSection: FC<IProps> = ({ className }) => {
             'GIT',
             'Jest',
             'UX',
-            'Googling'
+            'Googling',
           ].map((skill) => (
             <Badge key={skill}>{skill}</Badge>
           ))}
@@ -32,11 +32,13 @@ export const SkillSection: FC<IProps> = ({ className }) => {
       <article className="mt-10">
         <h3>{'Complementary'}</h3>
         <div className="flex flex-wrap gap-x-4 gap-y-4 mt-6">
-          {['React Native', 'Cypress', 'Nestjs', 'Docker', 'AWS', 'Jira'].map((skill) => (
-            <Badge color="secondary" key={skill}>
-              {skill}
-            </Badge>
-          ))}
+          {['React Native', 'Cypress', 'Nestjs', 'Docker', 'AWS', 'Jira'].map(
+            (skill) => (
+              <Badge color="secondary" key={skill}>
+                {skill}
+              </Badge>
+            ),
+          )}
         </div>
       </article>
     </section>

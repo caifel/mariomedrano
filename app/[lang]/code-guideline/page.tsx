@@ -1,5 +1,5 @@
-import cns from 'classnames';
 import Image from 'next/image';
+import cns from 'classnames';
 
 type TCardProps = {
   title: string;
@@ -11,9 +11,10 @@ const Card = ({ title, className }: TCardProps) => {
         {
           'w-full': true,
           'p-10 pb-15': true,
-          'transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl': true
+          'transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-2xl':
+            true,
         },
-        className
+        className,
       )}
     >
       <h3 className="text-3xl">{title}</h3>
@@ -22,7 +23,11 @@ const Card = ({ title, className }: TCardProps) => {
         &nbsp;
         <span className="text-red-400">{'2003'}</span>
         &nbsp;
-        <span>{'en Bolivia dió inicio un profundo cambio. Si fue para bien o para mal aún no está claro'}</span>
+        <span>
+          {
+            'en Bolivia dió inicio un profundo cambio. Si fue para bien o para mal aún no está claro'
+          }
+        </span>
       </p>
       <img
         width="400"
@@ -46,7 +51,10 @@ const Page = () => {
   return (
     <>
       <main className="py-40 px-5">
-        <Card title="El reinicio" className="border-white bg-zinc-900 text-white m-auto" />
+        <Card
+          title="El reinicio"
+          className="border-white bg-zinc-900 text-white m-auto"
+        />
       </main>
     </>
   );

@@ -1,5 +1,5 @@
-import { DivButton } from '@ui/Button';
 import React from 'react';
+import { DivButton } from '@ui/Button';
 import CloseSvg from './img/close.svg';
 import { InputProps } from './types';
 
@@ -7,7 +7,8 @@ import { InputProps } from './types';
 const Builder = React.forwardRef<HTMLInputElement, InputProps>(
   ({ value, name, onChange, ...others }, ref) => {
     const fileNameLength = String(value).length;
-    const fileName = fileNameLength > 5 ? `...${String(value).slice(-25)}` : value;
+    const fileName =
+      fileNameLength > 5 ? `...${String(value).slice(-25)}` : value;
     const handleClose = () => onChange?.(null as any);
     const renderTrigger = () => (
       <label>
@@ -28,7 +29,9 @@ const Builder = React.forwardRef<HTMLInputElement, InputProps>(
 
     const renderInfo = () => (
       <div>
-        <small className="font-semibold">{'The limit size of the file is 5 MB'}</small>
+        <small className="font-semibold">
+          {'The limit size of the file is 5 MB'}
+        </small>
         {value ? (
           <div className="mt-1 flex gap-x-1 items-center">
             <small className="text-gray-400">{fileName}</small>
@@ -50,7 +53,7 @@ const Builder = React.forwardRef<HTMLInputElement, InputProps>(
         {renderInfo()}
       </div>
     );
-  }
+  },
 );
 
 export default Builder;

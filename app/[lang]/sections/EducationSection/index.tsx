@@ -1,5 +1,5 @@
-import { i18n } from '@modules/i18n/i18n';
 import cns from 'classnames';
+import { i18n } from '@modules/i18n/i18n';
 import { EducationItem } from './EducationItem';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -19,7 +19,11 @@ export const EducationSection = ({ educationList, className }: IProps) => {
 
       <div className="mt-10">
         {educationList.map((item, index) => (
-          <EducationItem className={index > 0 ? 'mt-10' : ''} key={item.name} data={item} />
+          <EducationItem
+            className={index > 0 ? 'mt-10' : ''}
+            key={item.name}
+            data={item}
+          />
         ))}
       </div>
     </section>

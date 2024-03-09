@@ -3,7 +3,7 @@ import { Variant } from '.';
 const variantProps = {
   amount: '100',
   unit: 'pcs',
-  unitPrice: '1,5'
+  unitPrice: '1,5',
 };
 
 export const VariantKit = () => (

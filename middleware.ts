@@ -1,7 +1,7 @@
-import { i18nConfig } from '@modules/i18n/config';
-import getLocale from '@modules/i18n/getLocale';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
+import { i18nConfig } from '@modules/i18n/config';
+import getLocale from '@modules/i18n/getLocale';
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
     [
       '/images',
       '/sitemap.xml',
-      '/robots.txt'
+      '/robots.txt',
       // '/manifest.json',
       // '/favicon.ico',
       // Your other files in `public`
@@ -23,7 +23,8 @@ export function middleware(request: NextRequest) {
 
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18nConfig.locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    (locale) =>
+      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
 
   // Redirect if there is no locale
@@ -32,11 +33,13 @@ export function middleware(request: NextRequest) {
 
     // e.g. incoming request is /products
     // The new URL is now /en-US/products
-    return NextResponse.redirect(new URL(`/${locale}/${pathname}`, request.url));
+    return NextResponse.redirect(
+      new URL(`/${locale}/${pathname}`, request.url),
+    );
   }
 }
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };

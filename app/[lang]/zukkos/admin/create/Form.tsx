@@ -1,12 +1,12 @@
 'use client';
 
-import { ResizableTextareaController } from '@ui/Form/ResizableTextarea';
-import { ImageCropper } from '@ui/ImageCropper';
-import cns from 'classnames';
-import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
+import cns from 'classnames';
 import { Area } from 'react-easy-crop';
 import { useForm } from 'react-hook-form';
+import { ResizableTextareaController } from '@ui/Form/ResizableTextarea';
+import { ImageCropper } from '@ui/ImageCropper';
 import { readDataUrl } from '../../utils/readDataUrl';
 import CloseSvg from './img/close.svg';
 import PlusSvg from './img/plus.svg';
@@ -14,23 +14,27 @@ import { useCreate } from './useCreate';
 
 export const Form = () => {
   const { onSubmit } = useCreate();
-  const { register, handleSubmit, formState, setValue, watch, control } = useForm({
-    defaultValues: {
-      image: null,
-      imageCropArea: {},
-      title: '',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    }
-  });
+  const { register, handleSubmit, formState, setValue, watch, control } =
+    useForm({
+      defaultValues: {
+        image: null,
+        imageCropArea: {},
+        title: '',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      },
+    });
   const { isValid, isSubmitting, isDirty } = formState;
 
   const [imgData, setImgData] = useState<any>();
   const handleFocus = (event: any) => event.target.select();
   // const { title } = getValues();
-  const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
-    setValue('imageCropArea', croppedAreaPixels);
-  }, []);
+  const onCropComplete = useCallback(
+    (croppedArea: Area, croppedAreaPixels: Area) => {
+      setValue('imageCropArea', croppedAreaPixels);
+    },
+    [],
+  );
 
   const image = watch('image');
 
@@ -61,7 +65,7 @@ export const Form = () => {
           <label className="relative">
             <input
               {...register('image', {
-                required: true
+                required: true,
               })}
               type="file"
               accept="image/png, image/jpeg, image/webp, image/gif"
@@ -127,7 +131,9 @@ export const Form = () => {
             <b className="text-blue-500">{'one chapter.'}</b>
           </p>
           <p className="mt-3 text-gray-400">
-            {'You can add as many as you wish, but studies have shown that more than 13 lose people attention'}
+            {
+              'You can add as many as you wish, but studies have shown that more than 13 lose people attention'
+            }
           </p>
         </div>
       </div>
@@ -139,11 +145,13 @@ export const Form = () => {
           {
             'focus:bg-blue-800 bg-blue-900': true,
             // 'focus:bg-green-700 bg-green-800': true,
-            'opacity-50': !isValid || isSubmitting || !isDirty
-          }
+            'opacity-50': !isValid || isSubmitting || !isDirty,
+          },
         )}
       >
-        <span className="text-2xl font-semibold tracking-widest">{'CREATE'}</span>
+        <span className="text-2xl font-semibold tracking-widest">
+          {'CREATE'}
+        </span>
       </button>
     </form>
   );

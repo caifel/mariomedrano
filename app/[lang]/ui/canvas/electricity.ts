@@ -1,7 +1,7 @@
 export const electricity = () => {
   // Get the canvas and its context
-  var canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
-  var ctx = canvas.getContext('2d');
+  const canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d');
 
   function update() {
     const startX = canvas.width / 2;
@@ -26,7 +26,7 @@ export const electricity = () => {
     ctx.beginPath();
     ctx.moveTo(startX, startY);
 
-    let speedX = Math.random() * 50 - 25;
+    const speedX = Math.random() * 50 - 25;
     // direction can be any direction
     // make direction to be only to the north
     let speedY = Math.random() * 50 - 25;

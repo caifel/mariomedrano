@@ -5,18 +5,18 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     // Or if using `src` directory:
-    './src/**/*.{js,ts,jsx,tsx}'
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {},
       boxShadow: {
-        lightning: '0px 0px 10px yellow'
-      }
-    }
+        lightning: '0px 0px 10px yellow',
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
 
 // for dark mode font-weight is ok as light mode

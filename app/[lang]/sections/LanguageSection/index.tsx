@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { t } from '../../locales/en/all';
-import GlobeIcon from '../../images/globe.svg';
-import { LanguageItem } from './LanguageItem';
 import cns from 'classnames';
+import GlobeIcon from '../../images/globe.svg';
+import { t } from '../../locales/en/all';
+import { LanguageItem } from './LanguageItem';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
   languageList: TLanguage[];
@@ -19,7 +19,11 @@ export const LanguageSection: FC<IProps> = ({ className, languageList }) => {
       </h2>
       <div className="mt-10">
         {languageList.map((language, index) => (
-          <LanguageItem className={index > 0 ? 'mt-10' : ''} key={language.name} data={language} />
+          <LanguageItem
+            className={index > 0 ? 'mt-10' : ''}
+            key={language.name}
+            data={language}
+          />
         ))}
       </div>
     </section>

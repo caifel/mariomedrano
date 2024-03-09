@@ -1,13 +1,13 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import cns from 'classnames';
+import { Area } from 'react-easy-crop';
+import { useForm } from 'react-hook-form';
 import { ResizableTextareaController } from '@ui/Form/ResizableTextarea';
 import { ImageCropper } from '@ui/ImageCropper';
 import { readDataUrl } from 'app/[lang]/zukkos/utils/readDataUrl';
-import cns from 'classnames';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { Area } from 'react-easy-crop';
-import { useForm } from 'react-hook-form';
 import CloseSvg from './img/close.svg';
 import PlusSvg from './img/plus.svg';
 import { useEdit } from './useEdit';
@@ -20,16 +20,17 @@ type Props = {
 
 export const Form = ({ title, imgUrl, id }: Props) => {
   const { onSubmit } = useEdit();
-  const { register, handleSubmit, formState, setValue, watch, control } = useForm({
-    defaultValues: {
-      id,
-      title,
-      image: null,
-      imageCropArea: {},
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    }
-  });
+  const { register, handleSubmit, formState, setValue, watch, control } =
+    useForm({
+      defaultValues: {
+        id,
+        title,
+        image: null,
+        imageCropArea: {},
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      },
+    });
   const { isValid, isSubmitting, isDirty, errors } = formState;
   const isDisabled = !isValid || isSubmitting || !isDirty;
 
@@ -134,7 +135,9 @@ export const Form = ({ title, imgUrl, id }: Props) => {
             <b className="text-blue-500">{'one chapter.'}</b>
           </p>
           <p className="mt-3 text-gray-400">
-            {'You can add as many as you wish, but studies have shown that more than 13 lose people attention'}
+            {
+              'You can add as many as you wish, but studies have shown that more than 13 lose people attention'
+            }
           </p>
         </div>
       </div>
@@ -146,8 +149,8 @@ export const Form = ({ title, imgUrl, id }: Props) => {
           {
             'focus:bg-blue-800 bg-blue-900': true,
             // 'focus:bg-green-700 bg-green-800': true,
-            'opacity-50': isDisabled
-          }
+            'opacity-50': isDisabled,
+          },
         )}
       >
         <span className="text-2xl font-semibold tracking-widest">{'SAVE'}</span>

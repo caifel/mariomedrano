@@ -1,6 +1,6 @@
 export const t = {
   common: {
-    getInTouch: 'Follow the white rabbit'
+    getInTouch: 'Follow the white rabbit',
   },
   description: {
     part1: `Hello! I’m a 30 year old engineer from Bolivia living in Germany whose main passion is to acquire real knowledge to the point
@@ -10,27 +10,27 @@ export const t = {
     part4: 'I have over',
     part5: '8 years',
     part6:
-      'of experience working in world wide projects using web and mobile technologies while immersed in agile methodologies.'
+      'of experience working in world wide projects using web and mobile technologies while immersed in agile methodologies.',
   },
   section: {
     workingExperience: {
       title: 'Experience',
-      linkButton: 'Why, What & How'
+      linkButton: 'Why, What & How',
     },
     education: {
-      title: 'Education'
+      title: 'Education',
     },
     languages: {
-      title: 'Languages'
+      title: 'Languages',
     },
     hobbies: {
-      title: 'Hobbies'
-    }
+      title: 'Hobbies',
+    },
   },
 
   footer: {
     part1: 'The best vibes to you!',
     part2: 'Thanks for reading me',
-    part3: 'See ya soon!'
-  }
+    part3: 'See ya soon!',
+  },
 };

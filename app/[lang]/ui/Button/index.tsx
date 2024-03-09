@@ -1,5 +1,5 @@
-import cns from 'classnames';
 import { FC } from 'react';
+import cns from 'classnames';
 import LoadingIndicatorSvg from './img/loading-indicator.svg';
 import styles from './styles.module.scss';
 
@@ -13,7 +13,8 @@ type BuilderOwnProps<E extends ElementType> = {
   variant?: Variant;
   greyOutOnDisabled?: boolean;
 };
-type BuilderProps<E extends ElementType> = BuilderOwnProps<E> & React.ComponentProps<E>;
+type BuilderProps<E extends ElementType> = BuilderOwnProps<E> &
+  React.ComponentProps<E>;
 
 const Builder: FC<BuilderProps<ElementType>> = ({
   block,
@@ -35,7 +36,7 @@ const Builder: FC<BuilderProps<ElementType>> = ({
         [styles.primary]: variant === 'primary',
         [styles.secondary]: variant === 'secondary',
         [styles.disabled]: greyOutOnDisabled && others.disabled,
-        [className]: true
+        [className]: true,
       })}
       {...others}
     >
@@ -63,4 +64,6 @@ export const Button: FC<ButtonProps> = (props) => {
 export const LinkButton: FC<LinkButtonProps> = (props) => (
   <Builder target="_blank" rel="noopener noreferrer" as="a" {...props} />
 );
-export const DivButton: FC<LinkButtonProps> = (props) => <Builder as="div" {...props} />;
+export const DivButton: FC<LinkButtonProps> = (props) => (
+  <Builder as="div" {...props} />
+);

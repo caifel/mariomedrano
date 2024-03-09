@@ -1,5 +1,5 @@
-import { getList } from 'app/[lang]/zukkos/lib/getList';
 import nextConnect from 'next-connect';
+import { getList } from 'app/[lang]/zukkos/lib/getList';
 
 const handler = nextConnect();
 

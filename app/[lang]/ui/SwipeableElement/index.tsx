@@ -1,5 +1,5 @@
-import { Direction, useSwipe } from '@ui/utils/useSwipe';
 import React, { FC, useRef } from 'react';
+import { Direction, useSwipe } from '@ui/utils/useSwipe';
 
 type OwnProps = {
   // src: string;

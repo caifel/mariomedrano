@@ -1,6 +1,6 @@
-import { i18n } from '@modules/i18n/i18n';
-import cns from 'classnames';
 import Link from 'next/link';
+import cns from 'classnames';
+import { i18n } from '@modules/i18n/i18n';
 import { ExperienceItem } from './ExperienceItem';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -14,15 +14,23 @@ export const ExperienceSection = ({ workingExperience, className }: IProps) => {
   return (
     <section className={cns(className)} id="experience-section">
       <h2 className="flex items-center justify-between">
-        <a href="#experience-section">{dictionary.section.workingExperience.title}</a>
+        <a href="#experience-section">
+          {dictionary.section.workingExperience.title}
+        </a>
         <Link href={`/${locale}/what-and-how`}>
-          <span className="link block">{dictionary.section.workingExperience.linkButton}</span>
+          <span className="link block">
+            {dictionary.section.workingExperience.linkButton}
+          </span>
         </Link>
       </h2>
 
       <div className="mt-10">
         {workingExperience.map((experience, index) => (
-          <ExperienceItem className={index > 0 ? 'mt-10' : ''} key={experience.company} data={experience} />
+          <ExperienceItem
+            className={index > 0 ? 'mt-10' : ''}
+            key={experience.company}
+            data={experience}
+          />
         ))}
       </div>
     </section>

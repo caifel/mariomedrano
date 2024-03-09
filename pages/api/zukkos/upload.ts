@@ -1,7 +1,7 @@
 import nextConnect from 'next-connect';
+import sharp from 'sharp';
 import upload from 'server/multer';
 import { uploadToS3 } from 'server/s3';
-import sharp from 'sharp';
 
 const handler = nextConnect();
 
@@ -27,7 +27,11 @@ handler.post(async (req: any, res: any) => {
     for (const size of [1000, 500, 300, 100, 4]) {
       const key = `${id}x${size}.webp`;
       const url = `${process.env.S3_HOST}/${key}`;
-      const image = await sharp(buffer).extract({ left, top, width, height }).resize(size).webp().toBuffer();
+      const image = await sharp(buffer)
+        .extract({ left, top, width, height })
+        .resize(size)
+        .webp()
+        .toBuffer();
 
       await uploadToS3(image, key);
       urls.push(url);
@@ -35,7 +39,7 @@ handler.post(async (req: any, res: any) => {
 
     return res.json({
       message: 'Image uploaded successfully',
-      urls
+      urls,
     });
   } catch (error) {
     console.error(error);
@@ -47,6 +51,6 @@ export default handler;
 
 export const config = {
   api: {
-    bodyParser: false
-  }
+    bodyParser: false,
+  },
 };

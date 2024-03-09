@@ -1,5 +1,5 @@
-import { MongoClient } from 'mongodb';
 import { NextResponse } from 'next/server';
+import { MongoClient } from 'mongodb';
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.msvoy6e.mongodb.net/?retryWrites=true&w=majority`;
 const clientPromise = MongoClient.connect(uri);
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     const result = await saveData(title);
 
     return NextResponse.json({
-      id: result.insertedId
+      id: result.insertedId,
     });
   } catch (error) {
     console.error(error);

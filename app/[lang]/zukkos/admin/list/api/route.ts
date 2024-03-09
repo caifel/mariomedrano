@@ -1,5 +1,5 @@
-import { getList } from 'app/[lang]/zukkos/lib/getList';
 import { NextResponse } from 'next/server';
+import { getList } from 'app/[lang]/zukkos/lib/getList';
 
 export async function GET() {
   try {

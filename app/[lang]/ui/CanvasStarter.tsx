@@ -17,7 +17,7 @@ export const CanvasStarter: FC = () => {
 
     const mouse = {
       x: undefined,
-      y: undefined
+      y: undefined,
     };
 
     // canvas.addEventListener('click', (evt) => {

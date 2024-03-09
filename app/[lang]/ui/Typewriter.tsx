@@ -30,7 +30,7 @@ const Builder = ({ text, delay = 50, className }: Props) => {
       className={className}
       ref={(el) => {
         let index = 0;
-        
+
         if (el) {
           el.innerHTML = '';
         }

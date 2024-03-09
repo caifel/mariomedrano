@@ -5,7 +5,9 @@ export const usePreventTouchStart = () => {
     const onDocumentTouchStart = (event: TouchEvent) => {
       event.preventDefault();
     };
-    document.addEventListener('touchstart', onDocumentTouchStart, { passive: false });
+    document.addEventListener('touchstart', onDocumentTouchStart, {
+      passive: false,
+    });
 
     return () => {
       document.removeEventListener('touchstart', onDocumentTouchStart);

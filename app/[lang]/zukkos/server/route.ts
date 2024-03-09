@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const result = await saveData(title, description);
 
     return NextResponse.json({
-      id: result.insertedId
+      id: result.insertedId,
     });
   } catch (error) {
     console.error(error);

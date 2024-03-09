@@ -5,7 +5,7 @@ export enum ColorType {
   error = '#DC3444',
   info = '#0dcdb7',
   // info = '#0077b6',
-  disabled = 'grey'
+  disabled = 'grey',
 
   /// TODO: Update the colors as they have a meaning.
 }

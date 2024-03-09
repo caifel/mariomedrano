@@ -19,12 +19,15 @@ const Page = () => {
         <button className="mt-10" onClick={handleUpdate}>
           Re render
         </button>
-        <h1 className="mt-10" style={{ letterSpacing: 1, textAlign: 'center', fontSize: 42 }}>
+        <h1
+          className="mt-10"
+          style={{ letterSpacing: 1, textAlign: 'center', fontSize: 42 }}
+        >
           Task Sequence
         </h1>
         <div
           style={{
-            position: 'relative'
+            position: 'relative',
           }}
           className="mt-10"
         >
@@ -34,20 +37,20 @@ const Page = () => {
                 size: 133,
                 // color: '#28A745',
                 color: getColor(value),
-                lineWidth: 25
+                lineWidth: 25,
               },
               {
                 size: 125,
                 // color: '#28A74550',
                 color: `${getColor(value)}50`,
-                lineWidth: 8
+                lineWidth: 8,
               },
               {
                 size: 117,
                 // color: '#28A74510',
                 color: `${getColor(value)}10`,
-                lineWidth: 8
-              }
+                lineWidth: 8,
+              },
               // {
               //   size: 117,
               //   color: '#28A74510',
@@ -67,16 +70,16 @@ const Page = () => {
                 style={{
                   position: index > 0 ? `absolute` : `relative`,
                   top: (index > 0 && 0) || 0,
-                  left: (index > 0 && 0) || 0
+                  left: (index > 0 && 0) || 0,
                   // zIndex: 3
                 }}
                 data={[
                   {
                     title: 'One',
                     value,
-                    color: config.color
+                    color: config.color,
                   },
-                  { title: 'Two', value: 100 - value, color: 'transparent' }
+                  { title: 'Two', value: 100 - value, color: 'transparent' },
                   // { title: 'Two', value: 100 - tmpValue, color: '#000' }
                   // { title: 'Three', value: Math.floor(Math.random() * 100) + 1, color: '#6A2135', label: 'test' },
                   // {
@@ -93,12 +96,14 @@ const Page = () => {
                   strokeOpacity: 0.8,
                   // TODO: THIS CAN REPLACE HAVING MULTIPLE PIE CHARTS
                   // transition: 'all 1.35s ease'
-                  transition: 'stroke 1.35s ease'
+                  transition: 'stroke 1.35s ease',
                 }}
                 // onClick={(event, index) => {
                 //   console.log(index);
                 // }}
-                label={({ dataEntry, dataIndex }) => dataIndex === 0 && index === 0 && value}
+                label={({ dataEntry, dataIndex }) =>
+                  dataIndex === 0 && index === 0 && value
+                }
                 radius={pieChartDefaultProps.radius - 5}
                 // segmentsShift={(index) => (index === 0 ? 1 : 0)}
                 viewBoxSize={[config.size, config.size]}
@@ -112,7 +117,7 @@ const Page = () => {
                   stroke: getColor(value),
                   strokeWidth: 1.5,
                   fill: `#e3e3e3`,
-                  transition: 'stroke 1.35s ease'
+                  transition: 'stroke 1.35s ease',
                 }}
               />
             );

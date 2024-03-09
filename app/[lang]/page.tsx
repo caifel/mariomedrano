@@ -1,3 +1,5 @@
+import { ImageSample } from './ImageSample';
+import { education, hobbies, languages, workingExperience } from './data';
 import { DescriptionSection } from './sections/DescriptionSection';
 import { EducationSection } from './sections/EducationSection';
 import { ExperienceSection } from './sections/ExperienceSection';
@@ -7,17 +9,14 @@ import { HomeHeader } from './sections/HomeHeader';
 import { LanguageSection } from './sections/LanguageSection';
 import { SkillSection } from './sections/SkillSection';
 
-import { education, hobbies, languages, workingExperience } from './data';
-import { ImageSample } from './ImageSample';
-
 const getData = async () => {
   return new Response(
     JSON.stringify({
       education,
       hobbies,
       languages,
-      workingExperience
-    })
+      workingExperience,
+    }),
   ).json();
 };
 
@@ -31,9 +30,15 @@ const IndexPage = async () => {
       <HomeHeader className="card" />
       <main>
         <DescriptionSection className="card" />
-        <ExperienceSection className="card mt-px" workingExperience={data.workingExperience} />
+        <ExperienceSection
+          className="card mt-px"
+          workingExperience={data.workingExperience}
+        />
         <SkillSection className="card mt-px" />
-        <EducationSection className="card mt-px" educationList={data.education} />
+        <EducationSection
+          className="card mt-px"
+          educationList={data.education}
+        />
         <LanguageSection className="card mt-px" languageList={data.languages} />
         <HobbySection className="card mt-px" hobbies={data.hobbies} />
       </main>

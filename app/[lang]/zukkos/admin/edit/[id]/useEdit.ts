@@ -11,11 +11,11 @@ export const useEdit = () => {
         method: 'PUT',
         body: JSON.stringify({
           id: data.id,
-          title: data.title
+          title: data.title,
         }),
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       });
 
       if (data.image?.[0]) {
@@ -28,7 +28,7 @@ export const useEdit = () => {
 
         response = await fetch('/api/zukkos/upload', {
           method: 'POST',
-          body: formData
+          body: formData,
         });
       }
 

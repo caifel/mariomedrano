@@ -1,5 +1,5 @@
-import { i18n } from '@modules/i18n/i18n';
 import Link from 'next/link';
+import { i18n } from '@modules/i18n/i18n';
 import CheckMarkIcon from '../images/check-mark.svg';
 import HeaderBackIcon from '../images/header-back.svg';
 import Badge from '../ui/Badge';
@@ -11,7 +11,11 @@ const Page = () => {
   return (
     <main className="blog-page">
       <header className="h-24 relative flex items-center bg-white dark:bg-zinc-900">
-        <Link href={`/${locale}`} aria-label="back" className="absolute top-9 left-8 z-10">
+        <Link
+          href={`/${locale}`}
+          aria-label="back"
+          className="absolute top-9 left-8 z-10"
+        >
           <HeaderBackIcon className="w-6 text-red-500 dark:text-yellow-400" />
         </Link>
         <h1 className="text-center flex-1">{'Why, What & how?'}</h1>
@@ -39,7 +43,11 @@ const Page = () => {
       <article className="card mt-px">
         <h2>{'The What'}</h2>
         <p className="mt-6">
-          <span>{'So far during this journey I have implemented a variety of features such as:'}</span>
+          <span>
+            {
+              'So far during this journey I have implemented a variety of features such as:'
+            }
+          </span>
         </p>
         <div className="flex flex-wrap gap-x-4 gap-y-4 mt-6">
           <Badge color="secondary">{'CRUD'}</Badge>
@@ -72,7 +80,11 @@ const Page = () => {
           </span>
         </p>
         <p className="mt-6">
-          <span>{'I feel a certain joy about writing things down before starting a task.'}</span>
+          <span>
+            {
+              'I feel a certain joy about writing things down before starting a task.'
+            }
+          </span>
         </p>
         <ul className="mt-6">
           <li className="flex items-center">
@@ -97,8 +109,14 @@ const Page = () => {
           </li>
         </ul>
         <p className="mt-6">
-          <span>{'Once I put my hands to work I consider a personal challenge to end up with a good and'}</span>
-          <span className="text-red-500 dark:text-yellow-400">{' performant'}</span>
+          <span>
+            {
+              'Once I put my hands to work I consider a personal challenge to end up with a good and'
+            }
+          </span>
+          <span className="text-red-500 dark:text-yellow-400">
+            {' performant'}
+          </span>
           <span>{' solution.'}</span>
         </p>
         <ul className="mt-6">
@@ -119,7 +137,9 @@ const Page = () => {
         </ul>
         <p className="mt-6">
           <span>
-            {'And if the team strategy considers as a good investment of time to make the code bullet proof then:'}
+            {
+              'And if the team strategy considers as a good investment of time to make the code bullet proof then:'
+            }
           </span>
         </p>
         <ul className="mt-6">

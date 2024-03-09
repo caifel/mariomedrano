@@ -10,7 +10,7 @@ const upload = multer({
   //   // acl: 'public-read' // Set your desired ACL settings here
   // }),
   storage: multer.memoryStorage(),
-  limits: { fileSize: 5 * 1024 * 1024 } // In bytes: 5 MB
+  limits: { fileSize: 5 * 1024 * 1024 }, // In bytes: 5 MB
 });
 
 export default upload;

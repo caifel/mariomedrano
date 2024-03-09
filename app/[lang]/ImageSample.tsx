@@ -6,7 +6,7 @@ import content from '../../blocks-inputs/logo.png';
 export const ImageSample = () => {
   const [base64Image, setBase64Image] = useState<string | null>(null);
   const convertToBase64 = () => {
-    console.log(content, 'content')
+    console.log(content, 'content');
     const blob = new Blob([`${content}`], { type: 'image/png' });
     const reader = new FileReader();
     reader.readAsDataURL(blob);

@@ -4,9 +4,9 @@ import { useRef, useState } from 'react';
 import { useBoolean, useEffectOnce, useInterval } from 'react-use';
 import { Button } from './Button';
 import { ButtonKit } from './Button/ButtonKit';
-import { electricity } from './canvas/electricity';
 import { OutlinePie } from './OutlinePie';
 import { VariantKit } from './Variant/VariantKit';
+import { electricity } from './canvas/electricity';
 
 const SECOND = 1000;
 // seconds to minutes:seconds format
@@ -61,10 +61,10 @@ const Page = () => {
     () => {
       setPassedSeconds(
         // Rest current time from referent timestamp and get it in seconds
-        Math.floor((Date.now() - referentTimeStamp.current) / 1000)
+        Math.floor((Date.now() - referentTimeStamp.current) / 1000),
       );
     },
-    isRunning && !isComplete ? SECOND : null
+    isRunning && !isComplete ? SECOND : null,
   );
 
   // useEffect(() => {

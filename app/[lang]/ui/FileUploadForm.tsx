@@ -1,12 +1,15 @@
 'use client';
 
-import { Button } from '@ui/Button';
-import { ImageInputController } from '@ui/Form/ImageInput';
-import { ResizableTextarea, ResizableTextareaController } from '@ui/Form/ResizableTextarea';
 import { Ref, useEffect, useRef, useState } from 'react';
 import Cropper from 'react-easy-crop';
 import { useForm } from 'react-hook-form';
 import ReactModal from 'react-modal';
+import { Button } from '@ui/Button';
+import { ImageInputController } from '@ui/Form/ImageInput';
+import {
+  ResizableTextarea,
+  ResizableTextareaController,
+} from '@ui/Form/ResizableTextarea';
 import { Typewriter } from './Typewriter';
 
 const FileUploadForm = () => {
@@ -16,15 +19,20 @@ const FileUploadForm = () => {
     }
   >();
   const [crop, setCrop] = useState({ x: 0, y: 0 });
-  const [imgData, setImgData] = useState<string | ArrayBuffer | null | undefined>();
-  const onCropComplete = (percentages: any, pixels: any) => console.log('pixels', pixels, 'percentages', percentages);
+  const [imgData, setImgData] = useState<
+    string | ArrayBuffer | null | undefined
+  >();
+  const onCropComplete = (percentages: any, pixels: any) =>
+    console.log('pixels', pixels, 'percentages', percentages);
 
   // crop? yes/no
   // undo? yes/no
   // only crop if the image doesn't fit the aspect ratio
 
   //
-  const [editingField, setEditingField] = useState<'title' | 'description' | null>(null);
+  const [editingField, setEditingField] = useState<
+    'title' | 'description' | null
+  >(null);
   const [sampleText, setSampleText] = useState('Once upon a time...');
   //
 
@@ -33,13 +41,13 @@ const FileUploadForm = () => {
     control,
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({
     defaultValues: {
       image: null,
       title: '',
-      description: ''
-    }
+      description: '',
+    },
   });
 
   const image = watch('image');
@@ -74,8 +82,8 @@ const FileUploadForm = () => {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       });
       const entity: { id: string } = await response.json();
 
@@ -84,7 +92,7 @@ const FileUploadForm = () => {
 
       response = await fetch('/api/zukkos/upload', {
         method: 'POST',
-        body: formData
+        body: formData,
       });
 
       if (!response.ok) {
@@ -118,7 +126,11 @@ const FileUploadForm = () => {
         {'start'}
       </Button>
 
-      <ReactModal ariaHideApp={false} className="px-10 w-full h-full bg-zinc-800" isOpen={!!editingField}>
+      <ReactModal
+        ariaHideApp={false}
+        className="px-10 w-full h-full bg-zinc-800"
+        isOpen={!!editingField}
+      >
         <ResizableTextareaController
           name="title"
           control={control}
@@ -175,7 +187,12 @@ const FileUploadForm = () => {
 
       <div className="mt-5 flex flex-col">
         <label htmlFor="description">Description:</label>
-        <input className="mt-3 px-5 h-12 text-zinc-800" type="text" id="description" {...register('description')} />
+        <input
+          className="mt-3 px-5 h-12 text-zinc-800"
+          type="text"
+          id="description"
+          {...register('description')}
+        />
       </div>
 
       <Button type="submit" block className="mt-10">

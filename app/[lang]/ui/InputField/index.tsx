@@ -1,11 +1,11 @@
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 type TInputField = {
-  control?: UseFormRegisterReturn<string>;
+  control?: UseFormRegisterReturn;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 type TInputFieldGroup = {
-  control?: UseFormRegisterReturn<string>;
+  control?: UseFormRegisterReturn;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
   labelText: string;
   containerClassName?: string;
@@ -15,7 +15,12 @@ export const InputField = ({ id, type, control, ...props }: TInputField) => (
   <input type={type} id={id} {...props} {...control} />
 );
 
-export const InputFieldGroup = ({ labelText, containerClassName, control, inputProps }: TInputFieldGroup) => (
+export const InputFieldGroup = ({
+  labelText,
+  containerClassName,
+  control,
+  inputProps,
+}: TInputFieldGroup) => (
   <div className={containerClassName}>
     <label htmlFor={inputProps?.id}>{labelText}</label>
     <InputField id={inputProps?.id} control={control} {...inputProps} />

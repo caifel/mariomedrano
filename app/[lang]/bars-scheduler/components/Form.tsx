@@ -21,7 +21,7 @@ const TaskForm = () => {
         <InputFieldGroup
           labelText="Name"
           inputProps={{
-            id: 'name'
+            id: 'name',
           }}
           control={register('name')}
         />
@@ -35,7 +35,7 @@ const TaskForm = () => {
           containerClassName="mt-10"
           inputProps={{
             type: 'number',
-            id: 'duration'
+            id: 'duration',
           }}
           labelText="Duration"
           control={register('duration')}
@@ -45,7 +45,7 @@ const TaskForm = () => {
           containerClassName="mt-10"
           inputProps={{
             type: 'date',
-            id: 'date'
+            id: 'date',
           }}
           control={register('date', { disabled: false })}
         />
@@ -54,7 +54,7 @@ const TaskForm = () => {
             type: 'date',
             onChange: (e: any) => {
               console.log(e.target.value);
-            }
+            },
           }}
           containerClassName="mt-10"
           labelText="Date"

@@ -1,5 +1,5 @@
-import cns from 'classnames';
 import { FC } from 'react';
+import cns from 'classnames';
 
 interface IProps extends React.HTMLAttributes<HTMLAreaElement> {
   data: any;

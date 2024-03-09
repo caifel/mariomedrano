@@ -1,7 +1,7 @@
 'use client';
 
-import cns from 'classnames';
 import React, { FC, useEffect, useRef } from 'react';
+import cns from 'classnames';
 import { useEffectOnce } from 'react-use';
 import useTabVisibility from './utils/useTabVisibility';
 
@@ -16,7 +16,12 @@ type ControllerProps = {
   isPaused?: boolean;
 };
 
-export const Builder: React.FC<BuilderProps> = ({ arcSize = 0.5, size = 100, className, ...others }) => {
+export const Builder: React.FC<BuilderProps> = ({
+  arcSize = 0.5,
+  size = 100,
+  className,
+  ...others
+}) => {
   const strokeWidth = size / 10;
   const radius = size / 2 - strokeWidth / 2;
   const circumference = 2 * Math.PI * radius;
@@ -47,7 +52,7 @@ export const Builder: React.FC<BuilderProps> = ({ arcSize = 0.5, size = 100, cla
         strokeDashoffset={strokeDashoffset}
         transform={`rotate(-90 ${size / 2} ${size / 2})`}
         style={{
-          transition: 'stroke-dashoffset 1s linear'
+          transition: 'stroke-dashoffset 1s linear',
         }}
       />
       {/* <radialGradient id="neon-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -59,7 +64,12 @@ export const Builder: React.FC<BuilderProps> = ({ arcSize = 0.5, size = 100, cla
   );
 };
 
-export const OutlinePie: FC<BuilderProps & ControllerProps> = ({ isPaused, seconds, size, ...others }) => {
+export const OutlinePie: FC<BuilderProps & ControllerProps> = ({
+  isPaused,
+  seconds,
+  size,
+  ...others
+}) => {
   const totalSeconds = useRef(seconds);
   const arcSize = seconds / totalSeconds.current;
 
@@ -71,7 +81,7 @@ export const OutlinePie: FC<BuilderProps & ControllerProps> = ({ isPaused, secon
         // 'stroke-blue-500': isPaused,
         'stroke-green-500': arcSize > 0.4,
         'stroke-yellow-500': arcSize > 0.2 && arcSize <= 0.4,
-        'stroke-red-500': arcSize <= 0.2
+        'stroke-red-500': arcSize <= 0.2,
       })}
       arcSize={arcSize}
     />

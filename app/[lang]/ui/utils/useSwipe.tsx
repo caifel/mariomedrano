@@ -1,4 +1,10 @@
-import { DragEventHandler, MouseEventHandler, RefObject, TouchEventHandler, useRef } from 'react';
+import {
+  DragEventHandler,
+  MouseEventHandler,
+  RefObject,
+  TouchEventHandler,
+  useRef,
+} from 'react';
 
 export type Direction = 'up' | 'right' | 'down' | 'left';
 
@@ -48,9 +54,13 @@ function getThreshold(direction: Direction, overralDistance: number) {
   const thresholdFactor = isTouchDevice ? 1 : 1.5; // config
   const extraThreshold = Math.abs(overralDistance);
   const extraThresholdFactor = 5; // config
-  const isOpposite = direction === 'left' ? overralDistance > 0 : overralDistance < 0;
+  const isOpposite =
+    direction === 'left' ? overralDistance > 0 : overralDistance < 0;
 
-  return threshold * thresholdFactor + extraThreshold * extraThresholdFactor * (isOpposite ? 1 : -1);
+  return (
+    threshold * thresholdFactor +
+    extraThreshold * extraThresholdFactor * (isOpposite ? 1 : -1)
+  );
 }
 
 export const useSwipe: Handler = ({ ref, onDismiss, onDirectionChange }) => {
@@ -82,7 +92,9 @@ export const useSwipe: Handler = ({ ref, onDismiss, onDirectionChange }) => {
     const deltaY = 0;
 
     ref.current.style.transition = 'transform 0s';
-    ref.current.style.transform = `translate(${deltaX}px, ${deltaY}px) rotate(${deltaX * 0.1}deg)`;
+    ref.current.style.transform = `translate(${deltaX}px, ${deltaY}px) rotate(${
+      deltaX * 0.1
+    }deg)`;
     // ref.current.style.transform = `translate(${deltaX}px, ${deltaY}px) rotate(${deltaX * 0.1}deg)`;
   };
   const complete = (coordinates: Coordinates) => {
@@ -96,7 +108,9 @@ export const useSwipe: Handler = ({ ref, onDismiss, onDirectionChange }) => {
     const targetX = window.innerWidth * directionFactor;
     // TODO KEEP ACCELERATION, NOW THE MOVEMENT IS NOT SMOOTH
     const threshold = getThreshold(direction.current, overralDeltaX);
-    const shouldRemove = ['right', 'left'].includes(direction.current) && speed.current > threshold;
+    const shouldRemove =
+      ['right', 'left'].includes(direction.current) &&
+      speed.current > threshold;
 
     if (shouldRemove) {
       console.log('time', time.current);
@@ -168,6 +182,6 @@ export const useSwipe: Handler = ({ ref, onDismiss, onDirectionChange }) => {
     // Other props
     onDragStart: (e) => {
       e.preventDefault();
-    }
+    },
   };
 };

@@ -23,14 +23,14 @@ const Badge = ({ children, className, color = 'primary' }: TProps) => {
           'text-zinc-800': color === 'secondary',
           'border-zinc-800/50': color === 'secondary',
           'dark:text-white': color === 'secondary',
-          'dark:border-white/50': color === 'secondary'
+          'dark:border-white/50': color === 'secondary',
         },
         // Size
         'text-xs px-2.5 py-2',
         'md:text-sm md:px-3 md:py-2.5',
         'lg:text-lg lg:px-3.5 lg:py-3',
         // Others
-        className
+        className,
       )}
     >
       {children}

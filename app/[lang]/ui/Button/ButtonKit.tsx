@@ -1,7 +1,7 @@
+import BackSvg from './img/back.svg';
+import PlusSvg from './img/plus.svg';
 import { Button, LinkButton } from '.';
 // import MinusIcon from './Button/img/minus.svg';
-import PlusSvg from './img/plus.svg';
-import BackSvg from './img/back.svg';
 
 export const ButtonKit = () => {
   return (

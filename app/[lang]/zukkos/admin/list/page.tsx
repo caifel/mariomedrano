@@ -1,6 +1,6 @@
-import cns from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
+import cns from 'classnames';
 import { getImageUrl } from '../../utils/getImageUrl';
 import DotsVerticalSvg from './img/dots-vertical.svg';
 import PlusSvg from './img/plus.svg';
@@ -14,16 +14,19 @@ type Story = {
 
 const getList = async () => {
   // const response = await fetch('http://localhost:3000/en/zukkos/admin/list/api');
-  const HOST = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://caifel.com';
+  const HOST =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000'
+      : 'https://caifel.com';
   const response = await fetch(`${HOST}/api/zukkos/list`, {
-    cache: 'no-store'
+    cache: 'no-store',
   });
   const { list = [] } = await response.json();
 
   return list.map(({ _id, title }: any) => ({
     id: String(_id),
     title,
-    image: getImageUrl(String(_id), 500)
+    image: getImageUrl(String(_id), 500),
   })) as Story[];
 };
 
@@ -34,7 +37,9 @@ const Header = () => {
       <div className="w-3 h-3 bg-orange-400 ml-1" />
       <div className="w-2 h-2 bg-orange-300 ml-1" />
 
-      <h1 className="ml-2 select-none font-semibold text-xl tracking-tighter">{'Zukkos'}</h1>
+      <h1 className="ml-2 select-none font-semibold text-xl tracking-tighter">
+        {'Zukkos'}
+      </h1>
 
       <Image
         className="rounded-full flex-shrink-0 ml-auto"
@@ -55,7 +60,10 @@ const Body = async () => {
     <>
       {data.map(({ id, title, image }, index) => (
         <div key={id} className="w-full mt-5">
-          <Link className={cns(styles.linkImageContainer, 'relative')} href={`zukkos/admin/edit/${id}`}>
+          <Link
+            className={cns(styles.linkImageContainer, 'relative')}
+            href={`zukkos/admin/edit/${id}`}
+          >
             <Image
               className="aspect-video active:opacity-80 opacity-100 transition-opacity duration-300"
               alt="Picture of the story"

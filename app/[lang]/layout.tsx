@@ -1,7 +1,7 @@
+import { Roboto } from 'next/font/google';
 import { i18nConfig, Locale } from '@modules/i18n/config';
 import { i18n } from '@modules/i18n/i18n';
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
 import '../../styles/index.scss';
 import { personalInfo } from './data';
 
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     {
       rel: 'icon',
       href: '/favicon.ico',
-      url: '/favicon.ico'
-    }
+      url: '/favicon.ico',
+    },
   ],
   creator: personalInfo.name,
   publisher: personalInfo.name,
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     languages: {
       'en-US': 'https://caifel.com/en',
       'es-ES': 'https://caifel.com/es',
-      'de-DE': 'https://caifel.com/de'
-    }
-  }
+      'de-DE': 'https://caifel.com/de',
+    },
+  },
 };
 
 const roboto = Roboto({
   weight: ['300', '400', '700'],
-  subsets: ['latin']
+  subsets: ['latin'],
 });
 
 type Props = { children: React.ReactNode; params: { lang: Locale } };

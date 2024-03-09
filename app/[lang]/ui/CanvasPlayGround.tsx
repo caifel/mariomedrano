@@ -9,7 +9,12 @@ class Particle {
   speedY: number;
   color: string;
 
-  constructor(public x: number, public y: number, readonly hue: number, private ctx: CanvasRenderingContext2D) {
+  constructor(
+    public x: number,
+    public y: number,
+    readonly hue: number,
+    private ctx: CanvasRenderingContext2D,
+  ) {
     this.size = Math.random() * 15 + 1;
     this.speedX = Math.random() * 3 - 1.5; // Slow: 1 - 0.5, Fast: 10 - 5
     this.speedY = Math.random() * 3 - 1.5; // Slow: 1 - 0.5, Fast: 10 - 5
@@ -37,7 +42,11 @@ class Particle {
   }
 }
 
-function drawGlassContainer(ctx: CanvasRenderingContext2D, x: number, y: number) {
+function drawGlassContainer(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+) {
   // Define the circle center and radius
   const centerX = x;
   const centerY = y;
@@ -46,7 +55,14 @@ function drawGlassContainer(ctx: CanvasRenderingContext2D, x: number, y: number)
   const randowmBoolean = Math.random() >= 0.5;
 
   // Create a radial gradient that simulates the glass surface
-  const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+  const gradient = ctx.createRadialGradient(
+    centerX,
+    centerY,
+    0,
+    centerX,
+    centerY,
+    radius,
+  );
   //   gradient.addColorStop(0, 'rgba(255, 255, 255, 0.3)');
   //   gradient.addColorStop(0.8, 'rgba(255, 255, 255, 0.1)');
   //   gradient.addColorStop(1, 'rgba(255, 255, 255, 0.1');
@@ -77,7 +93,10 @@ function drawGlassContainer(ctx: CanvasRenderingContext2D, x: number, y: number)
   ctx.fill();
 }
 
-function animationModule(particlesArray: Particle[], ctx: CanvasRenderingContext2D) {
+function animationModule(
+  particlesArray: Particle[],
+  ctx: CanvasRenderingContext2D,
+) {
   for (let i = 0; i < particlesArray.length; i++) {
     particlesArray[i].update();
     particlesArray[i].draw();
